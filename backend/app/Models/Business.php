@@ -17,4 +17,9 @@ class Business extends Model
     {
         return $this->hasOne(User::class);
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
