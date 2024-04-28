@@ -9,11 +9,13 @@ class Attendee extends Model
 {
     use HasFactory;
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function meeting(){
+    public function meeting()
+    {
         return $this->belongsTo(Meeting::class);
     }
 }
