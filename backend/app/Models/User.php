@@ -34,14 +34,20 @@ class User extends Authenticatable
         return $this->hasMany(Event::class);
     }
 
-    public function attendees(){
+    public function attendees()
+    {
         return $this->hasMany(Attendee::class);
     }
 
-    public function participants(){
+    public function participants()
+    {
         return $this->hasMany(Participant::class);
     }
 
+    public function roles()
+    {
+        return $this->hasMany(UserRole::class);
+    }
 
 
 
