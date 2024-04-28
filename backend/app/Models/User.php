@@ -24,6 +24,11 @@ class User extends Authenticatable
         return $this->hasMany(Review::class);
     }
 
+    public function favrites()
+    {
+        return $this->hasMany(Review::class);
+    }
+
 
 
 

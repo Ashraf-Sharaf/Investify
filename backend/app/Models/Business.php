@@ -22,4 +22,9 @@ class Business extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function favrites()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
