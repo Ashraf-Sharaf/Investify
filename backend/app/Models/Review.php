@@ -16,6 +16,6 @@ class Review extends Model
 
     public function investor()
     {
-        return $this->belongsTo(Business::class);
+        return $this->belongsTo(User::class);
     }
 }
