@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Meeting extends Model
 {
     use HasFactory;
+
+    public function attendees()
+    {
+        return $this->hasMany(Attendee::class);
+    }
 }
