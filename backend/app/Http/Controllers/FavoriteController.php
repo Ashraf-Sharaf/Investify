@@ -30,4 +30,25 @@ class FavoriteController extends Controller
         ]);
     }
 
+    
+    public function remove_favorite(Request $request)
+    {
+        $investor = Auth::id();
+
+        if (!$investor) {
+            return response()->json([
+                'status' => 401,
+                'message' => 'Unauthorized'
+            ]);
+        }
+
+        $business = $request->business_id;
+        $favorite = Favorite::where(['investor_id' => $investor, 'business_id' => $business])->delete();
+
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Business removed from favorites'
+        ]);
+    }
 }
