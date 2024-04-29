@@ -11,9 +11,9 @@ class ReviewController extends Controller
 {
     public function add_review(Request $request)
     {
-        $investor = Auth::id();
+        $investorID = Auth::id();
 
-        if (!$investor) {
+        if (!$investorID) {
             return response()->json([
                 'status' => 401,
                 'message' => 'Unauthorized'
@@ -23,7 +23,7 @@ class ReviewController extends Controller
         $review = Review::create([
             'rating' => $request->rating,
             'description' => $request->description,
-            'investor_id' => $investor,
+            'investor_id' => $investorID,
             'business_id' => $request->business_id
         ]);
 
@@ -35,25 +35,25 @@ class ReviewController extends Controller
 
     public function get_reviews()
     {
-        $entrepreneur = Auth::id();
+        $entrepreneurID = Auth::id();
 
-        if (!$entrepreneur) {
+        if (!$entrepreneurID) {
             return response()->json([
                 'status' => 401,
                 'message' => 'Unauthorized'
             ]);
         }
 
-        $business = Business::where('entrepreneur_id', $entrepreneur)->value('id');
+        $businessID = Business::where('entrepreneur_id', $entrepreneurID)->value('id');
 
-        if (!$business) {
+        if (!$businessID) {
             return response()->json([
                 'status' => 204,
                 'message' => 'No Business Found'
             ]);
         }
 
-        $reviews = Review::where('business_id', $business)->get();
+        $reviews = Review::where('business_id', $businessID)->get();
 
         return response()->json([
             'status' => 200,

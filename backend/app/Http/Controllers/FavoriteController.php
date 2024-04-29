@@ -10,9 +10,9 @@ class FavoriteController extends Controller
 {
     public function add_favorite(Request $request)
     {
-        $investor = Auth::id();
+        $investorID = Auth::id();
 
-        if (!$investor) {
+        if (!$investorID) {
             return response()->json([
                 'status' => 401,
                 'message' => 'Unauthorized'
@@ -20,7 +20,7 @@ class FavoriteController extends Controller
         }
 
         $favorite = Favorite::create([
-            'investor_id' => $investor,
+            'investor_id' => $investorID,
             'business_id' => $request->business_id,
         ]);
 
@@ -33,17 +33,17 @@ class FavoriteController extends Controller
     
     public function remove_favorite(Request $request)
     {
-        $investor = Auth::id();
+        $investorID = Auth::id();
 
-        if (!$investor) {
+        if (!$investorID) {
             return response()->json([
                 'status' => 401,
                 'message' => 'Unauthorized'
             ]);
         }
 
-        $business = $request->business_id;
-        $favorite = Favorite::where(['investor_id' => $investor, 'business_id' => $business])->delete();
+        $businessID = $request->business_id;
+        $favorite = Favorite::where(['investor_id' => $investorID, 'business_id' => $businessID])->delete();
 
 
         return response()->json([

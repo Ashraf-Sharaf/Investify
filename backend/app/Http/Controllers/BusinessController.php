@@ -21,9 +21,9 @@ class BusinessController extends Controller
 
         ]));
 
-        $entrepreneur = Auth::id();
+        $entrepreneurID = Auth::id();
 
-        if (!$entrepreneur) {
+        if (!$entrepreneurID) {
             return response()->json([
                 'status' => 403,
                 'message' => "Unauthorized"
@@ -38,7 +38,7 @@ class BusinessController extends Controller
             'funding_needed' => $request->funding_needed,
             'stake_offered' => $request->stake_offered,
             'valuation' => $request->valuation,
-            'entrepreneur_id' => $entrepreneur,
+            'entrepreneur_id' => $entrepreneurID,
         ]);
 
         return response()->json([
@@ -66,12 +66,12 @@ class BusinessController extends Controller
 
     public function my_business()
     {
-        $entrepreneur = Auth::id();
+        $entrepreneurID = Auth::id();
 
-        $business = Business::where('entrepreneur_id', $entrepreneur)->get();
+        $business = Business::where('entrepreneur_id', $entrepreneurID)->get();
 
 
-        if (!$entrepreneur) {
+        if (!$entrepreneurID) {
             return response()->json([
                 'status' => 401,
                 'message' => "Unauthorized"
