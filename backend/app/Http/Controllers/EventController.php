@@ -69,6 +69,12 @@ class EventController extends Controller
 
     public function delete_event($id){
         $event = Event::findOrFail($id);
+        if(!$event){
+            return response()->json([
+                'status' => 204,
+                'message' => 'Event not found'
+            ]);
+        }
         $event ->delete();
         return response()->json([
             'status' => 200,
