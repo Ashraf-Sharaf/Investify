@@ -36,5 +36,5 @@ Route::post('add_favorite',[FavoriteController::class,'add_favorite']);
 Route::post('remove_favorite',[FavoriteController::class,'remove_favorite']);
 
 Route::post('add_review',[ReviewController::class,'add_review']);
-
+Route::get('get_reviews',[ReviewController::class,'get_reviews']);
 
