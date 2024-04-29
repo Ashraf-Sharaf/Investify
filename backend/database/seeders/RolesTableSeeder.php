@@ -27,5 +27,24 @@ class RolesTableSeeder extends Seeder
             'name' => 'entrepreneur',
         ]);
 
+        User::create([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'password'
+        ]);
+
+        User::create([
+            'name' => 'investor',
+            'email' => 'investor@gmail.com',
+            'password' => 'password'
+        ]);
+
+        User::create([
+            'name' => 'start',
+            'email' => 'start@gmail.com',
+            'password' => 'password'
+        ]);
+
+
     }
 }
