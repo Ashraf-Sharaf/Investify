@@ -9,6 +9,8 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $fillable=['rating','description','investor_id','business_id'];
+
     public function business()
     {
         return $this->belongsTo(Business::class);
