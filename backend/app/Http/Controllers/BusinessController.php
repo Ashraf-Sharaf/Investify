@@ -90,4 +90,49 @@ class BusinessController extends Controller
             'businesses' => $business
         ]);
     }
+
+    public function edit_business(Request $request)
+    {
+        $entrepreneurID = Auth::id();
+        if (!$entrepreneurID) {
+            return response()->json([
+                'status' => 401,
+                'message' => "Unauthorized"
+            ]);
+        }
+
+        $businessID = Business::where('entrepreneur_id', $entrepreneurID)->value('id');
+        if (!$businessID) {
+            return response()->json([
+                'status' => 204,
+                'message' => "No Business Found"
+            ]);
+        }
+
+        $data = $request->validate(([
+            'name' => 'string',
+            'industry' => 'string',
+            'location' => 'string',
+            'description' => 'string',
+            'funding_needed' => 'numeric',
+            'stake_offered' => 'numeric',
+            'valuation' => 'numeric',
+        ]));
+
+        $business = Business::findOrFail($businessID);
+
+        foreach ($data as $attribute => $value) {
+            if (!is_null($value)) {
+                $business->$attribute = $value;
+            }
+        }
+
+        $business->save();
+        
+        return response()->json([
+            'status' => 200,
+            'message' => 'Business edited successfully',
+
+        ]);
+    }
 }
