@@ -26,4 +26,5 @@ Route::post('login',[AuthController::class,'login']);
 Route::post('logout',[AuthController::class,'logout']);
 
 Route::post('add_business',[BusinessController::class,'add_business']);
+Route::get('all_businesses',[BusinessController::class,'all_businesses']);
 
