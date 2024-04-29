@@ -41,3 +41,4 @@ Route::post('add_review',[ReviewController::class,'add_review']);
 Route::get('get_reviews',[ReviewController::class,'get_reviews']);
 
 Route::post('create_event',[EventController::class,'create_event']);
+Route::post('edit_event',[EventController::class,'edit_event']);
