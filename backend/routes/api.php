@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Http\Request;
@@ -39,3 +40,4 @@ Route::post('remove_favorite',[FavoriteController::class,'remove_favorite']);
 Route::post('add_review',[ReviewController::class,'add_review']);
 Route::get('get_reviews',[ReviewController::class,'get_reviews']);
 
+Route::post('create_event',[EventController::class,'create_event']);

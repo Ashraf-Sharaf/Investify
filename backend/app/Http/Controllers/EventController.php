@@ -14,7 +14,7 @@ class EventController extends Controller
 
         $request->validate(([
             'date' => 'required|date',
-            'time' => 'required|time',
+            'time' => 'required|date_format:H:i',
         ]));
 
         if (!$hostID) {
