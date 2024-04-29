@@ -63,4 +63,31 @@ class BusinessController extends Controller
             'businesses' => $businesses
         ]);
     }
+
+    public function my_business()
+    {
+        $entrepreneur = Auth::id();
+
+        $business = Business::where('entrepreneur_id', $entrepreneur)->get();
+
+
+        if (!$entrepreneur) {
+            return response()->json([
+                'status' => 401,
+                'message' => "Unauthorized"
+            ]);
+        }
+        if ($business->isEmpty()) {
+            return response()->json([
+                'status' => 204,
+                'message' => "No Business Found"
+            ]);
+        }
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Business retrieved successfully',
+            'businesses' => $business
+        ]);
+    }
 }
