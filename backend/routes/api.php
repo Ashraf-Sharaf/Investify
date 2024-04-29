@@ -32,5 +32,6 @@ Route::get('my_business',[BusinessController::class,'my_business']);
 
 
 Route::post('add_favorite',[FavoriteController::class,'add_favorite']);
+Route::post('remove_favorite',[FavoriteController::class,'remove_favorite']);
 
 
