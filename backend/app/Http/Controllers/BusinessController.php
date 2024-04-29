@@ -38,12 +38,28 @@ class BusinessController extends Controller
             'funding_needed' => $request->funding_needed,
             'stake_offered' => $request->stake_offered,
             'valuation' => $request->valuation,
-            'entrepreneur_id'=>$entrepreneur,
+            'entrepreneur_id' => $entrepreneur,
         ]);
 
         return response()->json([
             'status' => 200,
             'message' => 'Business added successfully'
+        ]);
+    }
+
+    public function all_businesses()
+    {
+        $businesses = Business::all();
+        if ($businesses->isEmpty()) {
+            return response()->json([
+                'status' => 403,
+                'message' => "No Businesses Found"
+            ]);
+        }
+        return response()->json([
+            'status' => 200,
+            'message' => 'Businesses retrieved successfully',
+            'businesses' => $businesses
         ]);
     }
 }
