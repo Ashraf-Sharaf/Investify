@@ -49,7 +49,8 @@ class BusinessController extends Controller
 
     public function all_businesses()
     {
-        $businesses = Business::all();
+        $businesses = Business::whereNull('investor_id')->get();
+
         if ($businesses->isEmpty()) {
             return response()->json([
                 'status' => 403,
