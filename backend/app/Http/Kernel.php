@@ -4,6 +4,7 @@ namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use App\Http\Middleware\InvestorMiddleware;
+use App\Http\Middleware\AdminMiddleware;
 
 class Kernel extends HttpKernel
 {
@@ -56,6 +57,7 @@ class Kernel extends HttpKernel
     protected $middlewareAliases = [
 
         'investor.middleware' => InvestorMiddleware::class,
+        'admin.middleware' => AdminMiddleware::class,
 
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
