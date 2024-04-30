@@ -9,6 +9,7 @@ class Participant extends Model
 {
     use HasFactory;
 
+    protected $fillable=['entrepreneur_id' , 'event_id'];
     public function user()
     {
         return $this->belongsTo(User::class);
