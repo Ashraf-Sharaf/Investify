@@ -15,6 +15,12 @@ return new class extends Migration
             $table->unsignedBigInteger('role_id')->after('password');
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
         });
+
+        Schema::table('attendees', function (Blueprint $table) {
+            $table->unsignedBigInteger('meeting_id');
+            $table->foreign('meeting_id')->references('id')->on('meetings')->onDelete('cascade');
+        });
+        
     }
 
     /**
