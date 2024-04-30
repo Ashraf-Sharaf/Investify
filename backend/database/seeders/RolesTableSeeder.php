@@ -30,35 +30,22 @@ class RolesTableSeeder extends Seeder
         User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
-            'password' => 'password'
+            'password' => 'password',
+            'role_id' => 1
         ]);
 
         User::create([
             'name' => 'investor',
             'email' => 'investor@gmail.com',
-            'password' => 'password'
+            'password' => 'password',
+            'role_id' => 2
         ]);
 
         User::create([
             'name' => 'start',
             'email' => 'start@gmail.com',
-            'password' => 'password'
-        ]);
-
-
-        UserRole::create([
-            'role_id' => 1,
-            'user_id' => 1
-        ]);
-
-        UserRole::create([
-            'role_id' => 2,
-            'user_id' => 2
-        ]);
-
-        UserRole::create([
-            'role_id' => 3,
-            'user_id' => 3
+            'password' => 'password',
+            'role_id' => 3
         ]);
     }
 }
