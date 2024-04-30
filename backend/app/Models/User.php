@@ -15,6 +15,13 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'role_id'
+    ];
+
     public function business()
     {
         return $this->hasOne(Business::class);
@@ -45,9 +52,9 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Participant::class);
     }
 
-    public function roles()
+    public function role()
     {
-        return $this->hasMany(UserRole::class);
+        return $this->belongsTo(Role::class);
     }
 
 
@@ -58,11 +65,7 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+
 
     /**
      * The attributes that should be hidden for serialization.
