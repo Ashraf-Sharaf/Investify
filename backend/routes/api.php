@@ -23,17 +23,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::post('register',[AuthController::class,'register']);
 Route::post('login',[AuthController::class,'login']);
 Route::post('logout',[AuthController::class,'logout']);
 
-Route::post('add_business',[BusinessController::class,'add_business']);
-Route::post('edit_business',[BusinessController::class,'edit_business']);
+Route::group(["middleware" => "entrepreneur.middleware"], function () {
 
-Route::get('my_business',[BusinessController::class,'my_business']);
+    Route::post('add_business',[BusinessController::class,'add_business']);
+    Route::post('edit_business',[BusinessController::class,'edit_business']);
+    Route::get('my_business',[BusinessController::class,'my_business']);
 
-Route::get('get_reviews',[ReviewController::class,'get_reviews']);
+    Route::get('get_reviews',[ReviewController::class,'get_reviews']);
+
+});
+
+
+
+
+
 
 Route::post('create_event',[EventController::class,'create_event']);
 Route::post('edit_event',[EventController::class,'edit_event']);
