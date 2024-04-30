@@ -20,6 +20,11 @@ class ReviewController extends Controller
             ]);
         }
 
+        $request->validate([
+            'rating' => 'required|numeric|min:1|max:5',
+            'description' => 'required|string'
+        ]);
+
         $review = Review::create([
             'rating' => $request->rating,
             'description' => $request->description,

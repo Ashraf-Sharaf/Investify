@@ -10,7 +10,7 @@ class BusinessController extends Controller
 {
     public function add_business(Request $request)
     {
-        $request->validate(([
+        $request->validate([
             'name' => 'required|string',
             'industry' => 'required|string',
             'location' => 'required|string',
@@ -19,7 +19,7 @@ class BusinessController extends Controller
             'stake_offered' => 'required|numeric',
             'valuation' => 'required|numeric',
 
-        ]));
+        ]);
 
         $entrepreneurID = Auth::id();
 
@@ -109,7 +109,7 @@ class BusinessController extends Controller
             ]);
         }
 
-        $data = $request->validate(([
+        $data = $request->validate([
             'name' => 'string',
             'industry' => 'string',
             'location' => 'string',
@@ -117,7 +117,7 @@ class BusinessController extends Controller
             'funding_needed' => 'numeric',
             'stake_offered' => 'numeric',
             'valuation' => 'numeric',
-        ]));
+        ]);
 
         $business = Business::findOrFail($businessID);
 
