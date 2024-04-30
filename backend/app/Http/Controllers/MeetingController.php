@@ -12,12 +12,12 @@ class MeetingController extends Controller
 
         $request->validate(([
             'date' => 'required|date',
-            'start-time' => 'required|date_format:H:i',
-            'end-time' => 'required|date_format:H:i'
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i'
         ]));
 
         $meeting = Meeting::create([
-            'date' => $request->data,
+            'date' => $request->date,
             'start_time' => $request->start_time,
             'end_time' => $request->end_time
         ]);
