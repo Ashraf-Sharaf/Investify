@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendeeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\EventController;
@@ -31,6 +32,8 @@ Route::post('logout', [AuthController::class, 'logout']);
 
 Route::post('create_meeting',[MeetingController::class,'create_meeting']);
 Route::post('edit_meeting',[MeetingController::class,'edit_meeting']);
+
+Route::post('join_meeting',[AttendeeController::class,'join_meeting']);
 
 Route::group(["middleware" => "entrepreneur.middleware"], function () {
 
