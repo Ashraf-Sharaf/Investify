@@ -12,10 +12,10 @@ class EventController extends Controller
     {
         $hostID = Auth::id();
 
-        $request->validate(([
+        $request->validate([
             'date' => 'required|date',
             'time' => 'required|date_format:H:i',
-        ]));
+        ]);
 
         if (!$hostID) {
             return response()->json([
@@ -40,10 +40,10 @@ class EventController extends Controller
     {
         $hostID = Auth::id();
 
-        $data = $request->validate(([
+        $data = $request->validate([
             'date' => 'date',
             'time' => 'date_format:H:i',
-        ]));
+        ]);
 
         if (!$hostID) {
             return response()->json([
@@ -63,7 +63,7 @@ class EventController extends Controller
 
         return response()->json([
             'status' => 200,
-            'message' => 'Event added successfully'
+            'message' => 'Event edited successfully'
         ]);
     }
 
