@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Http\Request;
@@ -28,6 +29,7 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout']);
 
+Route::post('create_meeting',[MeetingController::class,'create_meeting']);
 
 Route::group(["middleware" => "entrepreneur.middleware"], function () {
 
