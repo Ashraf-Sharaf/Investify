@@ -30,6 +30,7 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout']);
 
 Route::post('create_meeting',[MeetingController::class,'create_meeting']);
+Route::post('edit_meeting',[MeetingController::class,'edit_meeting']);
 
 Route::group(["middleware" => "entrepreneur.middleware"], function () {
 
