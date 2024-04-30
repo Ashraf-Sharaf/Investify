@@ -30,16 +30,22 @@ Route::post('logout',[AuthController::class,'logout']);
 
 Route::post('add_business',[BusinessController::class,'add_business']);
 Route::post('edit_business',[BusinessController::class,'edit_business']);
-Route::get('all_businesses',[BusinessController::class,'all_businesses']);
+
 Route::get('my_business',[BusinessController::class,'my_business']);
 
-
-Route::post('add_favorite',[FavoriteController::class,'add_favorite']);
-Route::post('remove_favorite',[FavoriteController::class,'remove_favorite']);
-
-Route::post('add_review',[ReviewController::class,'add_review']);
 Route::get('get_reviews',[ReviewController::class,'get_reviews']);
 
 Route::post('create_event',[EventController::class,'create_event']);
 Route::post('edit_event',[EventController::class,'edit_event']);
 Route::delete('delete_event/{id}', [EventController::class, 'delete_event']);
+
+
+Route::group(["middleware" => "investor.middleware"], function () {
+    Route::get('all_businesses',[BusinessController::class,'all_businesses']);
+
+    Route::post('add_favorite',[FavoriteController::class,'add_favorite']);
+    Route::post('remove_favorite',[FavoriteController::class,'remove_favorite']);
+    
+    Route::post('add_review',[ReviewController::class,'add_review']);
+
+});
