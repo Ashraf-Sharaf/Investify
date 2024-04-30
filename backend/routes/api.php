@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,8 @@ Route::group(["middleware" => "entrepreneur.middleware"], function () {
     Route::get('my_business', [BusinessController::class, 'my_business']);
 
     Route::get('get_reviews', [ReviewController::class, 'get_reviews']);
+
+    Route::post('join_event',[ParticipantController::class,'join_event']);
 });
 
 
