@@ -14,24 +14,24 @@
 .around{
     justify-content: space-around;
 }
-.gap_10{
+.gap-10{
     gap:10px;
 }
-.gap_20{
+.gap-20{
     gap:20px;
 }
-.gap_30{
+.gap-30{
     gap:30px;
 }
-.full_w{
+.full-w{
     width: 100%;
 }
-.full_h{
+.full-h{
     height: 100%;
 }
-.half_w{
+.half-w{
     width: 50%;
 }
-.half_h{
+.half-h{
     width: 50%;
 }

@@ -1,15 +1,15 @@
-.main_color{
+.main-color{
     color: #084f09;
 }
-.secondary_color{
+.secondary-color{
     color: #84B17F;
 }
-.bg_main{
+.bg-main{
     background-color: #084f09;
 }
-.bg_secondary{
+.bg-secondary{
     background-color: #84B17F;
 }
-.bg_grey{
+.bg-grey{
     background-color:#F6F6F6 ;
 }
