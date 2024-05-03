@@ -1,0 +1,37 @@
+.flex{
+    display: flex;
+}
+.column{
+    flex-direction: column;
+}
+.center{
+    align-items: center;
+    justify-content: center;
+}
+.between{
+    justify-content: space-between;
+}
+.around{
+    justify-content: space-around;
+}
+.gap_10{
+    gap:10px;
+}
+.gap_20{
+    gap:20px;
+}
+.gap_30{
+    gap:30px;
+}
+.full_w{
+    width: 100%;
+}
+.full_h{
+    height: 100%;
+}
+.half_w{
+    width: 50%;
+}
+.half_h{
+    width: 50%;
+}
