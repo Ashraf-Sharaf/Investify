@@ -1,0 +1,25 @@
+.landing-nav{
+    border-bottom: 1px solid grey;
+    width: 100%;
+    height: 80px;
+}
+.login-nav-button{
+    height: 50px;
+    width: 100px;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #084f09;
+    cursor: pointer;
+}
+.signup-nav-button{
+    height: 50px;
+    width: 100px;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #084f09;
+    color:white;
+    cursor: pointer;
+}

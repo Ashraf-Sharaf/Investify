@@ -8,6 +8,9 @@
     align-items: center;
     justify-content: center;
 }
+.align{
+    align-items: center;
+}
 .between{
     justify-content: space-between;
 }
@@ -34,4 +37,10 @@
 }
 .half-h{
     width: 50%;
+}
+.padding-10{
+    padding: 10px;
+}
+.padding-20{
+    padding: 20px;
 }
