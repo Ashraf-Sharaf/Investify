@@ -1,13 +1,23 @@
-import Login from "./components/login";
 import "./auth.css";
+import { useState } from "react";
+
+import Login from "./components/login";
+import Signup from "./components/signup";
 
 function Auth() {
-    return (
-      <div>
-        <Login/>
-      </div>
-    );
-  }
-  
-  export default Auth;
-  
+  const [toggleForm, setToggleForm] = useState(true);
+
+  const handleToggle = () => {
+    setToggleForm(toggleForm ? false : true);
+  };
+  return (
+    <div>
+      {toggleForm ? (
+        <Login onToggle={handleToggle} />
+      ) : (
+        <Signup onToggle={handleToggle} />
+      )}
+    </div>
+  );
+}
+export default Auth;
