@@ -7,7 +7,13 @@
   height: 100%;
   width: 50%;
   background-color: white;
+}
+.signup{
   border-radius: 0px 200px 200px 0px;
+  
+}
+.login{
+  border-radius: 200px 0px 0px 200px ;
 }
 .greeting {
   height: 50%;
@@ -36,23 +42,23 @@
   background-color: #084f09;
   color: white;
 }
-.signup-section{
+.auth-section{
   height: 100%;
   width: 50%;
 }
-.signup-form {
+.auth-form {
   height: 50%;
   width: 70%;
 }
-.signup-form h1{
+.auth-form h1{
   font-size: 54px;
   color: white;
 }
-.signup-form .auth-button {
+.auth-form .auth-button {
   background-color: #084f09;
   color: white;
 }
-.signup-form .auth-button:hover {
+.auth-form .auth-button:hover {
   background-color: white;
   color: #084f09;
   border: solid 3px #084f09;
