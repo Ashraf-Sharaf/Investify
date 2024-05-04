@@ -19,12 +19,14 @@ function Stories() {
   return (
     <div className="story-section flex column center around">
       <h1>Success Stories</h1>
-      <Slider {...settings}>
-        {data.map((d)=>(
-        <div key={d.name} className="story-card flex center column gap-20">
-          <h2>{d.name}</h2>
-          <p>{d.review}</p>
-        </div>
+      <Slider {...settings} className="story-slider">
+        {data.map((d) => (
+          <div key={d.name} className="story-cards">
+            <div className="story-card flex center column gap-20">
+              <h2>{d.name}</h2>
+              <p>{d.review}</p>
+            </div>
+          </div>
         ))}
       </Slider>
     </div>

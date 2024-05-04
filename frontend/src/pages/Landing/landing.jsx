@@ -10,7 +10,7 @@ function Landing(){
     <Header/>
     <Hero/>
     <Analytics/>
-    {/* <Stories/> */}
+    <Stories/>
     <Footer/>
     </div>
 }
