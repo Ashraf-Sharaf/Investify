@@ -26,7 +26,7 @@ function Footer() {
         </div>
         <div className="flex gap-10">
           <LocalPhoneIcon/>
-          <p>+961 010203</p>
+          <p>+961 01010203</p>
         </div>
         <div className="flex gap-10">
           <EmailIcon/>
