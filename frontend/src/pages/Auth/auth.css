@@ -8,12 +8,11 @@
   width: 50%;
   background-color: white;
 }
-.signup{
+.signup {
   border-radius: 0px 200px 200px 0px;
-  
 }
-.login{
-  border-radius: 200px 0px 0px 200px ;
+.login {
+  border-radius: 200px 0px 0px 200px;
 }
 .greeting {
   height: 50%;
@@ -42,7 +41,7 @@
   background-color: #084f09;
   color: white;
 }
-.auth-section{
+.auth-section {
   height: 100%;
   width: 50%;
 }
@@ -50,7 +49,7 @@
   height: 50%;
   width: 70%;
 }
-.auth-form h1{
+.auth-form h1 {
   font-size: 54px;
   color: white;
 }
@@ -67,5 +66,96 @@
   border-radius: 7px;
   width: 70%;
   height: 40px;
-  padding:10px ;
+  padding: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .greeting-section,
+  .auth-section {
+    width: 100%;
+    height: 50%;
+  }
+
+  .greeting-section {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .signup {
+    border-radius: 0px;
+  }
+
+  .login {
+    border-radius: 0px;
+  }
+  .greeting {
+    width: 70%;
+    text-align: center;
+  }
+
+  .greeting p {
+    font-size: 28px;
+  }
+
+  .greeting h1 {
+    font-size: 36px;
+  }
+  .auth-button {
+    width: 100px;
+    height: 30px;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  .greeting .auth-button {
+    background-color: white;
+    border: solid 3px #084f09;
+    color: #084f09;
+  }
+  .greeting .auth-button:hover {
+    background-color: #084f09;
+    color: white;
+  }
+
+  .auth-form {
+    width: 70%;
+    text-align: center;
+    gap:10px;
+  }
+
+  .auth-form h1 {
+    font-size: 36px;
+    color: white;
+  }
+
+  .auth-form .auth-button {
+    background-color: #084f09;
+    color: white;
+    
+  }
+
+  .auth-form .auth-button:hover {
+    background-color: white;
+    color: #084f09;
+    border: solid 3px #084f09;
+  }
+
+  .auth-inputs {
+    border-radius: 7px;
+    width: 70%;
+    height: 40px;
+    padding: 10px;
+  }
 }
