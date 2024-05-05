@@ -17,12 +17,7 @@ class EventController extends Controller
             'time' => 'required|date_format:H:i',
         ]);
 
-        if (!$hostID) {
-            return response()->json([
-                'status' => 403,
-                'message' => "Unauthorized"
-            ]);
-        }
+
 
         $event = Event::create([
             'host_id' => $hostID,
@@ -45,12 +40,7 @@ class EventController extends Controller
             'time' => 'date_format:H:i',
         ]);
 
-        if (!$hostID) {
-            return response()->json([
-                'status' => 403,
-                'message' => "Unauthorized"
-            ]);
-        }
+
         $eventID = $request->event_id;
         $event = Event::findORFail($eventID);
 

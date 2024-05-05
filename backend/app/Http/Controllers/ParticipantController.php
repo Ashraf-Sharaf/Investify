@@ -12,12 +12,6 @@ class ParticipantController extends Controller
 
         $entrepreneurID = Auth::id();
 
-        if (!$entrepreneurID) {
-            return response()->json([
-                'status' => 403,
-                'message' => "Unauthorized"
-            ]);
-        }
 
         $participation=Participant::create([
             'entrepreneur_id'=>$entrepreneurID,

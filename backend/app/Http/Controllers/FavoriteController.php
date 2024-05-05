@@ -12,12 +12,7 @@ class FavoriteController extends Controller
     {
         $investorID = Auth::id();
 
-        if (!$investorID) {
-            return response()->json([
-                'status' => 401,
-                'message' => 'Unauthorized'
-            ]);
-        }
+
 
         $favorite = Favorite::create([
             'investor_id' => $investorID,
@@ -35,12 +30,6 @@ class FavoriteController extends Controller
     {
         $investorID = Auth::id();
 
-        if (!$investorID) {
-            return response()->json([
-                'status' => 401,
-                'message' => 'Unauthorized'
-            ]);
-        }
 
         $businessID = $request->business_id;
         $favorite = Favorite::where(['investor_id' => $investorID, 'business_id' => $businessID])->delete();

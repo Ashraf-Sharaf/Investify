@@ -13,12 +13,6 @@ class ReviewController extends Controller
     {
         $investorID = Auth::id();
 
-        if (!$investorID) {
-            return response()->json([
-                'status' => 401,
-                'message' => 'Unauthorized'
-            ]);
-        }
 
         $request->validate([
             'rating' => 'required|numeric|min:1|max:5',

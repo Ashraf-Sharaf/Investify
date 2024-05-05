@@ -23,13 +23,6 @@ class BusinessController extends Controller
 
         $entrepreneurID = Auth::id();
 
-        if (!$entrepreneurID) {
-            return response()->json([
-                'status' => 403,
-                'message' => "Unauthorized"
-            ]);
-        }
-
         $business = Business::create([
             'name' => $request->name,
             'industry' => $request->industry,
@@ -70,13 +63,6 @@ class BusinessController extends Controller
 
         $business = Business::where('entrepreneur_id', $entrepreneurID)->get();
 
-
-        if (!$entrepreneurID) {
-            return response()->json([
-                'status' => 401,
-                'message' => "Unauthorized"
-            ]);
-        }
         if ($business->isEmpty()) {
             return response()->json([
                 'status' => 204,
@@ -94,12 +80,7 @@ class BusinessController extends Controller
     public function edit_business(Request $request)
     {
         $entrepreneurID = Auth::id();
-        if (!$entrepreneurID) {
-            return response()->json([
-                'status' => 401,
-                'message' => "Unauthorized"
-            ]);
-        }
+
 
         $businessID = Business::where('entrepreneur_id', $entrepreneurID)->value('id');
         if (!$businessID) {
@@ -128,7 +109,7 @@ class BusinessController extends Controller
         }
 
         $business->save();
-        
+
         return response()->json([
             'status' => 200,
             'message' => 'Business edited successfully',
