@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import { parsePath } from "react-router-dom";
 
 function Signup({ onToggle }) {
   const [name, setName] = useState("");

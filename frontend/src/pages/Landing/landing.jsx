@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Analytics from "./components/Analytics";
 import Stories from "./components/Stories";
-import Footer from "../common/Footer";
+import Footer from "../Footer/Footer";
 import Services from "./components/Services";
 
 function Landing(){
