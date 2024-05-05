@@ -7,6 +7,7 @@ function Signup({ onToggle }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState(null); 
 
   const registerUser = async () => {
     try {
@@ -25,13 +26,10 @@ function Signup({ onToggle }) {
           // navigate('/home');
         }
       } else {
-        console.log("Passwords does not match");
-        console.log(password);
-        console.log(confirmPassword);
-
+        setError("Passwords do not match.");
       }
     } catch (error) {
-      console.error(" error:", error);
+      setError("Error, try again later!");
     }
   };
   return (
@@ -48,12 +46,12 @@ function Signup({ onToggle }) {
       <div className="flex column center auth-section">
         <div className="flex column between center  auth-form">
           <h1>Sign Up</h1>
-          <input
+          <input type="email"
             className="auth-inputs"
             placeholder="Name"
             onChange={(e) => {
               setName(e.target.value);
-            }}
+            }} required 
           ></input>
           <input
             className="auth-inputs"
@@ -63,6 +61,7 @@ function Signup({ onToggle }) {
             }}
           ></input>
           <input
+            type="password"
             className="auth-inputs"
             placeholder="Password"
             onChange={(e) => {
@@ -70,6 +69,7 @@ function Signup({ onToggle }) {
             }}
           ></input>
           <input
+            type="password"
             className="auth-inputs"
             placeholder="Confirm Password"
             onChange={(e) => {
@@ -84,6 +84,8 @@ function Signup({ onToggle }) {
           >
             Sign up
           </button>
+          {error && <div className="error-message">{error}</div>}
+          
         </div>
       </div>
     </div>
