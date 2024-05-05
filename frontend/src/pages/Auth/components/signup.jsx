@@ -1,20 +1,89 @@
+import { useState } from "react";
+import axios from "axios";
+import { parsePath } from "react-router-dom";
+
 function Signup({ onToggle }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const registerUser = async () => {
+    try {
+      if (password == confirmPassword) {
+        const data = {
+          name: name,
+          email: email,
+          password: password,
+        };
+
+        const res = await axios.post(
+          "http://127.0.0.1:8000/api/register",
+          data
+        );
+        if (res.status === 200) {
+          // navigate('/home');
+        }
+      } else {
+        console.log("Passwords does not match");
+        console.log(password);
+        console.log(confirmPassword);
+
+      }
+    } catch (error) {
+      console.error(" error:", error);
+    }
+  };
   return (
     <div className="flex bg-secondary main-container">
       <div className="flex column center signup greeting-section">
         <div className="flex center column greeting between">
           <h1>Welcome To Investify</h1>
           <p>Register with your personal details to use all of site featuers</p>
-          <button className="auth-button" onClick={() => onToggle()}>Log in</button>
+          <button className="auth-button" onClick={() => onToggle()}>
+            Log in
+          </button>
         </div>
       </div>
       <div className="flex column center auth-section">
         <div className="flex column between center  auth-form">
           <h1>Sign Up</h1>
-          <input className="auth-inputs" placeholder="E-mail"></input>
-          <input className="auth-inputs" placeholder="Password"></input>
-          <input className="auth-inputs" placeholder="Confirm Password"></input>
-          <button className="auth-button" >Sign up</button>
+          <input
+            className="auth-inputs"
+            placeholder="Name"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          ></input>
+          <input
+            className="auth-inputs"
+            placeholder="E-mail"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          ></input>
+          <input
+            className="auth-inputs"
+            placeholder="Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          ></input>
+          <input
+            className="auth-inputs"
+            placeholder="Confirm Password"
+            onChange={(e) => {
+              setConfirmPassword(e.target.value);
+            }}
+          ></input>
+          <button
+            className="auth-button"
+            onClick={() => {
+              registerUser();
+            }}
+          >
+            Sign up
+          </button>
         </div>
       </div>
     </div>
