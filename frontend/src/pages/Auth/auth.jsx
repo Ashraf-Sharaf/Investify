@@ -5,7 +5,7 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 
 function Auth() {
-  const [toggleForm, setToggleForm] = useState(true);
+  const [toggleForm, setToggleForm] = useState(false);
 
   const handleToggle = () => {
     setToggleForm(toggleForm ? false : true);
