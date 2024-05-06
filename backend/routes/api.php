@@ -32,8 +32,9 @@ Route::post('logout', [AuthController::class, 'logout']);
 
 Route::post('create_meeting',[MeetingController::class,'create_meeting']);
 Route::post('edit_meeting',[MeetingController::class,'edit_meeting']);
-
 Route::post('join_meeting',[AttendeeController::class,'join_meeting']);
+
+Route::post('add_photo',[AuthController::class,'add_photo']);
 
 Route::group(["middleware" => "entrepreneur.middleware"], function () {
 

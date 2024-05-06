@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -44,13 +45,13 @@ class AuthController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
-        
-        
+
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            
+
         ]);
 
         $token = Auth::login($user);
@@ -71,6 +72,45 @@ class AuthController extends Controller
         return response()->json([
             'status' => 200,
             'message' => 'Successfully logged out',
+        ]);
+    }
+
+    public function add_photo(Request $request)
+    {
+        $filename = null;
+        $userID = Auth::id();
+        $user = User::findOrFail($userID);
+        if (!$userID) {
+            return response()->json([
+                'status' => 400,
+                'message' => "Unauthorized"
+            ]);
+        }
+        if ($request->hasFile('profile_image')) {
+
+            if ($user->profile_picture) {
+                $oldFilePath = public_path('/profile_pictures/') . $user->profile_picture;
+                if (File::exists($oldFilePath)) {
+                    File::delete($oldFilePath);
+                }
+            }
+
+            $file = $request->file('profile_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move(public_path('/profile_pictures/'), $filename);
+
+            $user->update(['profile_picture' => $filename]);
+
+
+            return response()->json([
+                'status' => 200,
+                'message' => "Photo uploaded successfully"
+            ]);
+        }
+        return response()->json([
+            'status' => 400,
+            'message' => "No photo uploaded"
         ]);
     }
 }
