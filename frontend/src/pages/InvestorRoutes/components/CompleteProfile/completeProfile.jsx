@@ -1,5 +1,16 @@
 import "./completeProfile.css";
+import React, { useState } from 'react';
+
 function CompleteProfile() {
+  const [selectedOption, setSelectedOption] = useState('');
+
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+
+
   return (
     <div className="investor-container flex column gap-20">
       <div className="complete-profile-nav flex align padding-20 between">
@@ -15,8 +26,8 @@ function CompleteProfile() {
         <div className="complete-profile-form flex column center gap-20 padding-20">
           <h1>Complete Your Profile</h1>
 
-          <div className="complete-profile-info flex between">
-            <div className="child flex column  between gap-20">
+          <div className="complete-profile-info flex gap-20 between">
+            <div className="half-w  flex column  between gap-20">
               <div className="flex gap-20 between center">
                 <h3>First Name</h3>
                 <input type="text"></input>
@@ -31,7 +42,7 @@ function CompleteProfile() {
               </div>
             </div>
 
-            <div className="child flex column  between gap-20">
+            <div className="half-w  flex column  between gap-20">
               <div className="flex gap-20 between center">
                 <h3>Last Name</h3>
                 <input type="text"></input>
@@ -43,6 +54,28 @@ function CompleteProfile() {
               <div className="flex gap-20 between center">
                 <h3>Age</h3>
                 <input type="text"></input>
+              </div>
+            </div>
+          </div>
+          <div className="investment-range flex  ">
+            <h3>Investment Size Range</h3>
+
+            <div className="flex gap-10 column">
+              <div className="flex gap-20">
+                <input type="radio" value="" name="radio"/>
+                <label>1,000$ - 50,000$</label>
+              </div>
+              <div className="flex gap-20">
+                <input type="radio" value="" name="radio"/>
+                <label>50,000$ - 75,000$</label>
+              </div>
+              <div className="flex gap-20">
+                <input type="radio" value="" name="radio"/>
+                <label>75,000$ - 100,000$</label>
+              </div>
+              <div className="flex gap-20">
+                <input type="radio" value="" name="radio"/>
+                <label>Over 100,000$</label>
               </div>
             </div>
           </div>

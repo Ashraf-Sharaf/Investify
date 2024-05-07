@@ -20,13 +20,17 @@
   width: 70%;
   height: fit-content;
   border-radius: 20px;
+  
 }
 .complete-profile-info {
-  width: 90%;
+  width: 100%;
 }
 .complete-profile-info input {
+  width: 250px;
   height: 30px;
+  border-radius: 7px;
 }
-.child {
-  width: 45%;
+.investment-range{
+    width:100%;
+    gap:50px;
 }
