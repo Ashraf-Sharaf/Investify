@@ -1,4 +1,5 @@
 import "./completeProfile.css";
+import Footer from "../../../Footer/Footer";
 
 function CompleteProfile() {
   return (
@@ -78,6 +79,7 @@ function CompleteProfile() {
           <button className="complete-profile-button">Submit</button>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
