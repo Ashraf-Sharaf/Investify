@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import CompleteProfile from "./components/completeProfile";
+import CompleteProfile from "./components/CompleteProfile/completeProfile";
 
 function Investor() {
   return (

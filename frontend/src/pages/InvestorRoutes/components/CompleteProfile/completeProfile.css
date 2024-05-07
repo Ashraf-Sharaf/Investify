@@ -1,0 +1,32 @@
+.investor-container {
+  width: 100%;
+}
+.complete-profile-nav {
+  height: 80px;
+  border-bottom: 1px solid grey;
+}
+.logout-nav-button {
+  height: 50px;
+  width: 100px;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #084f09;
+  cursor: pointer;
+}
+.complete-profile-form {
+  background-color: #f0f0f0;
+  width: 70%;
+  height: fit-content;
+  border-radius: 20px;
+}
+.complete-profile-info {
+  width: 90%;
+}
+.complete-profile-info input {
+  height: 30px;
+}
+.child {
+  width: 45%;
+}
