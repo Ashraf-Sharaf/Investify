@@ -1,16 +1,6 @@
 import "./completeProfile.css";
-import React, { useState } from 'react';
 
 function CompleteProfile() {
-  const [selectedOption, setSelectedOption] = useState('');
-
-
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
-
-
   return (
     <div className="investor-container flex column gap-20">
       <div className="complete-profile-nav flex align padding-20 between">
@@ -62,23 +52,30 @@ function CompleteProfile() {
 
             <div className="flex gap-10 column">
               <div className="flex gap-20">
-                <input type="radio" value="" name="radio"/>
+                <input type="radio" value="" name="radio" />
                 <label>1,000$ - 50,000$</label>
               </div>
               <div className="flex gap-20">
-                <input type="radio" value="" name="radio"/>
+                <input type="radio" value="" name="radio" />
                 <label>50,000$ - 75,000$</label>
               </div>
               <div className="flex gap-20">
-                <input type="radio" value="" name="radio"/>
+                <input type="radio" value="" name="radio" />
                 <label>75,000$ - 100,000$</label>
               </div>
               <div className="flex gap-20">
-                <input type="radio" value="" name="radio"/>
+                <input type="radio" value="" name="radio" />
                 <label>Over 100,000$</label>
               </div>
             </div>
           </div>
+
+          <div className="additional-info gap-10 flex column">
+            <h3>Additonal Information</h3>
+            <textarea rows="5"></textarea>
+          </div>
+
+          <button className="complete-profile-button">Submit</button>
         </div>
       </div>
     </div>
