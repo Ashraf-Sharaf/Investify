@@ -21,6 +21,23 @@ function Home() {
           <button className="logout-nav-button">Log out</button>
         </div>
       </div>
+
+      <div className="investor-businesses-container flex column gap-20">
+        <div className="investor-business flex gap-20 ">
+          <div className="investor-business-img">
+             <img src="/images/Investify.png" alt="No image" />
+             </div>
+          <div></div>
+
+
+
+
+
+        </div>
+        {/* <div className="investor-business -right">
+          <h1>hello</h1>
+        </div> */}
+      </div>
     </div>
   );
 }
