@@ -15,9 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/auth" element={<Auth />} />
-          <Route path="/user" element={<UserRoutes />} />
-          <Route path="/admin" element={<AdminRoutes />} />
-          <Route path="/investor" element={<InvestorRoutes />} />
+          <Route path="/user/*" element={<UserRoutes />} />
+          <Route path="/admin/*" element={<AdminRoutes />} />
+          <Route path="/investor/*" element={<InvestorRoutes />} />
         </Routes>
       </BrowserRouter>
     </div>
