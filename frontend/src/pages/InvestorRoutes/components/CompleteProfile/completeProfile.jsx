@@ -3,7 +3,7 @@ import "./completeProfile.css";
 import Footer from "../../../Footer/Footer";
 
 function CompleteProfile() {
-  const [image, setImage] = useState("/images/Investify.png");
+  const [image, setImage] = useState("/images/null-state.PNG");
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -36,6 +36,7 @@ function CompleteProfile() {
           <div className="complete-profile-upload-image flex center gap-10 column  ">
             <div className="image-uploaded">
               <img src={image} alt="Upload your picture" />
+
             </div>
             <div>
               <label for="file-upload" class="custom-file-upload">
