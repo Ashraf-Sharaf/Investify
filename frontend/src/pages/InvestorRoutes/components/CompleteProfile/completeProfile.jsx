@@ -4,7 +4,7 @@ import Footer from "../../../Footer/Footer";
 function CompleteProfile() {
   return (
     <div className="investor-container flex column gap-20">
-      <div className="complete-profile-nav flex align padding-20 between">
+      <div className="investor-nav flex align padding-20 between">
         <div className="landing-nav-logo ">
           <img className="logo " src="/images/Investify.png" alt="logo"></img>
         </div>
