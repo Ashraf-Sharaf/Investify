@@ -2,6 +2,7 @@ import "./InvestorHome.css";
 import SearchIcon from "@mui/icons-material/Search";
 import LeftCard from "./components/left-card";
 import RightCard from "./components/right-card";
+import Footer from "../../../Footer/Footer";
 function Home() {
   return (
     <div>
@@ -28,6 +29,7 @@ function Home() {
         <LeftCard />
         <RightCard/>
       </div>
+        <Footer/>
     </div>
   );
 }
