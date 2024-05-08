@@ -41,5 +41,18 @@ background-color: rgb(27, 148, 148);
 .investor-business-img img{
   height: 100%;
   width: 100%;
-
+}
+.investor-business-description{
+  width: 65%;
+  height: 100%;
+}
+.investor-business-button{
+  height: 35px;
+  width: 130px;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: green;
+  color: #084f09;
+  cursor: pointer;
 }
