@@ -16,7 +16,11 @@ function CompleteProfile() {
       <div className="flex center">
         <div className="complete-profile-form flex column center gap-20 padding-20">
           <h1>Complete Your Profile</h1>
-
+          <div className="complete-profile-upload-image flex center column ">
+              <div className="image-uploaded flex center">
+              <img src="/images/Investify.png" alt="Uploaded"/>
+              </div>
+          </div>
           <div className="complete-profile-info flex gap-20 between">
             <div className="half-w  flex column  between gap-20">
               <div className="flex gap-20 between center">
@@ -79,7 +83,7 @@ function CompleteProfile() {
           <button className="complete-profile-button">Submit</button>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
