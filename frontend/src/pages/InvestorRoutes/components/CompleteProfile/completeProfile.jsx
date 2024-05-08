@@ -1,7 +1,24 @@
+import React, { useState } from "react";
 import "./completeProfile.css";
 import Footer from "../../../Footer/Footer";
 
 function CompleteProfile() {
+  const [image, setImage] = useState("/images/Investify.png");
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setImage("/images/Investify.png");
+    }
+  };
+
   return (
     <div className="investor-container flex column gap-20">
       <div className="investor-nav flex align padding-20 between">
@@ -16,10 +33,16 @@ function CompleteProfile() {
       <div className="flex center">
         <div className="complete-profile-form flex column center gap-20 padding-20">
           <h1>Complete Your Profile</h1>
-          <div className="complete-profile-upload-image flex center column ">
-              <div className="image-uploaded flex center">
-              <img src="/images/Investify.png" alt="Uploaded"/>
-              </div>
+          <div className="complete-profile-upload-image flex center gap-10 column  ">
+            <div className="image-uploaded">
+              <img src={image} alt="Upload your picture" />
+            </div>
+            <div>
+              <label for="file-upload" class="custom-file-upload">
+                <input id="file-upload" type="file" onChange={handleFileChange}/>
+                Upload File
+              </label>
+            </div>
           </div>
           <div className="complete-profile-info flex gap-20 between">
             <div className="half-w  flex column  between gap-20">
