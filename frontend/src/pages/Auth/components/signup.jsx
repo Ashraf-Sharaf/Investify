@@ -2,7 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 
 function Signup({ onToggle }) {
-  const [name, setName] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -12,7 +13,8 @@ function Signup({ onToggle }) {
     try {
       if (password == confirmPassword) {
         const data = {
-          name: name,
+          first_name: firstname,
+          last_name: lastname,
           email: email,
           password: password,
         };
@@ -47,9 +49,16 @@ function Signup({ onToggle }) {
           <h1>Sign Up</h1>
           <input type="email"
             className="auth-inputs"
-            placeholder="Name"
+            placeholder="First Name"
             onChange={(e) => {
-              setName(e.target.value);
+              setFirstname(e.target.value);
+            }} required 
+          ></input>
+                    <input type="email"
+            className="auth-inputs"
+            placeholder="Last Name"
+            onChange={(e) => {
+              setLastname(e.target.value);
             }} required 
           ></input>
           <input
