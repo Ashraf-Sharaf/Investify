@@ -1,11 +1,14 @@
 import "./InvestorHome.css";
 import React, { useState, useEffect } from "react";
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import SearchIcon from "@mui/icons-material/Search";
 import LeftCard from "./components/left-card";
 import RightCard from "./components/right-card";
 import Footer from "../../../Footer/Footer";
 function Home() {
+  const navigate = useNavigate();
+
   const [Businesses, setBusinesses] = useState([]);
 
   const loadBusinesses = async () => {
@@ -28,6 +31,11 @@ function Home() {
     loadBusinesses();
   }, []);
 
+  const logout = ()=>{
+    window.localStorage.setItem("token",null);
+    navigate('/');
+  }
+
   return (
     <div>
       <div className="investor-nav flex align padding-20 between">
@@ -45,7 +53,7 @@ function Home() {
           </div>
         </div>
         <div className="flex gap-10">
-          <button className="logout-nav-button">Log out</button>
+          <button className="logout-nav-button" onClick={()=>{logout()}}>Logout</button>
         </div>
       </div>
 

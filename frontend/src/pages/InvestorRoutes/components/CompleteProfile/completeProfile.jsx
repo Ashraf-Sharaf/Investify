@@ -22,6 +22,12 @@ function CompleteProfile() {
     }
   };
 
+  const logout = ()=>{
+    window.localStorage.setItem("token",null);
+    navigate('/');
+  }
+
+
   return (
     <div className="investor-container flex column gap-20">
       <div className="investor-nav flex align padding-20 between">
@@ -29,7 +35,7 @@ function CompleteProfile() {
           <img className="logo " src="/images/Investify.png" alt="logo"></img>
         </div>
         <div className="flex gap-10">
-          <button className="logout-nav-button">Log out</button>
+          <button className="logout-nav-button" onClick={()=>logout()}>Logout</button>
         </div>
       </div>
 
