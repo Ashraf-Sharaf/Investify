@@ -3,8 +3,13 @@ import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
 import CloseIcon from "@mui/icons-material/Close";
 import Footer from "../../../Footer/Footer";
 import "./SingleBusiness.css";
+import React, { useState } from "react";
+import Rating from "@mui/material/Rating";
 
 function SingleBuisness() {
+  
+  const [value, setValue] = useState(0);
+
   return (
     <div className="flex column ">
       <div className="investor-nav flex align padding-20 between">
@@ -37,7 +42,7 @@ function SingleBuisness() {
           <div className="single-business-details flex column padding-10 gap-20">
             <div className="flex between">
               <h2>Business name</h2>
-              <CloseIcon/>
+              <CloseIcon />
             </div>
             <h4>Beirut, Lebanon</h4>
             <h4>Industry</h4>
@@ -54,11 +59,13 @@ function SingleBuisness() {
             </p>
             <h4>Add Rating</h4>
             <div className="flex gap-10 ">
-              <StarBorderRoundedIcon />
-              <StarBorderRoundedIcon />
-              <StarBorderRoundedIcon />
-              <StarBorderRoundedIcon />
-              <StarBorderRoundedIcon />
+              <Rating
+                name="simple-controlled"
+                value={value}
+                onChange={(event, newValue) => {
+                  setValue(newValue);
+                }}
+              />
             </div>
             <h4>Add Review</h4>
             <div className="flex gap-20">
@@ -72,7 +79,7 @@ function SingleBuisness() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
