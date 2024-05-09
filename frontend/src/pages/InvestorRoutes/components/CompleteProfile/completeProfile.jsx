@@ -50,7 +50,7 @@ function CompleteProfile() {
               <div className="flex gap-20 between center">
                 <h3>First Name</h3>
                 <input type="text"></input>
-              </div>
+              </div> 
               <div className="flex gap-20 between center">
                 <h3>Location</h3>
                 <input type="text"></input>
@@ -68,11 +68,11 @@ function CompleteProfile() {
               </div>
               <div className="flex gap-20 between center">
                 <h3>Phone Number</h3>
-                <input type="text"></input>
+                <input type="number" min="1" ></input>
               </div>
               <div className="flex gap-20 between center">
                 <h3>Age</h3>
-                <input type="text"></input>
+                <input type="number" min="1" ></input>
               </div>
             </div>
           </div>

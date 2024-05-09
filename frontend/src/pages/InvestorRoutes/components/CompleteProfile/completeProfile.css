@@ -29,6 +29,7 @@
   height: 30px;
   border-radius: 7px;
   padding: 10px;
+  border: solid 1px #bbbbbb;
 }
 .investment-range {
   width: 100%;
@@ -36,6 +37,12 @@
 }
 .additional-info {
   width: 100%;
+  
+}
+.additional-info textarea{
+  border: solid 1px #bbbbbb;
+  border-radius: 7px;
+  padding: 10px;
 }
 .complete-profile-button {
   width: 150px;
