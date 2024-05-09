@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./completeProfile.css";
 import Footer from "../../../Footer/Footer";
 
 function CompleteProfile() {
+  const navigate = useNavigate();
+
   const [image, setImage] = useState("/images/null-state.PNG");
 
   const handleFileChange = (e) => {
@@ -104,7 +107,7 @@ function CompleteProfile() {
             <textarea rows="5"></textarea>
           </div>
 
-          <button className="complete-profile-button">Submit</button>
+          <button className="complete-profile-button" onClick={()=>{navigate('/investor/home')}}>Submit</button>
         </div>
       </div>
       <Footer />

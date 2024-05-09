@@ -1,9 +1,44 @@
 import "./InvestorHome.css";
+import React ,{ useState, useEffect } from "react";
+import axios from "axios";
 import SearchIcon from "@mui/icons-material/Search";
 import LeftCard from "./components/left-card";
 import RightCard from "./components/right-card";
 import Footer from "../../../Footer/Footer";
 function Home() {
+  const [Businesses, setBusinesses] = useState([]);
+
+  const loadBusinesses = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8000/api/all_businesses",       {
+           headers: {
+          Authorization: "Bearer " + window.localStorage.getItem("token"),
+        },
+      });
+
+      setBusinesses(response.data);
+    } catch (error) {
+      console.error("Error loading coin requests data:", error);
+    }
+  };
+  useEffect(() => {
+    loadBusinesses();
+    
+    console.log( window.localStorage.getItem("token"))
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       <div className="investor-nav flex align padding-20 between">

@@ -21,8 +21,8 @@ function Login({ onToggle }) {
           "token",
           res.data.authorisation.token
         );
-        // navigate('/home');
-        alert("logged");
+        navigate('/investor');
+     
         
       }
     } catch (error) {
