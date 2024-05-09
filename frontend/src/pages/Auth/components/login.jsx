@@ -35,7 +35,7 @@ function Login({ onToggle }) {
       <div className="flex bg-secondary main-container">
         <div className="flex column center auth-section">
           <div className="flex column between center  auth-form">
-            <h1>Log in</h1>
+            <h1>Login</h1>
             <input
               className="auth-inputs"
               placeholder="E-mail"
@@ -57,7 +57,7 @@ function Login({ onToggle }) {
                 loginUSer();
               }}
             >
-              Log in
+              Login
             </button>
           </div>
         </div>
@@ -66,7 +66,7 @@ function Login({ onToggle }) {
             <h1>Welcome Back</h1>
             <p>Log in with your personal details to use all of site featuers</p>
             <button className="auth-button" onClick={() => onToggle()}>
-              Sign up
+              Sign Up
             </button>
           </div>
         </div>

@@ -40,7 +40,7 @@ function Signup({ onToggle }) {
           <h1>Welcome To Investify</h1>
           <p>Register with your personal details to use all of site featuers</p>
           <button className="auth-button" onClick={() => onToggle()}>
-            Log in
+            Login
           </button>
         </div>
       </div>
@@ -90,7 +90,7 @@ function Signup({ onToggle }) {
               registerUser();
             }}
           >
-            Sign up
+            Sign Up
           </button>
           {error && <div className="error-message">{error}</div>}
           
