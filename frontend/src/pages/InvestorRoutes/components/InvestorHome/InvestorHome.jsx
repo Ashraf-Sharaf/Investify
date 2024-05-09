@@ -1,5 +1,5 @@
 import "./InvestorHome.css";
-import React ,{ useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchIcon from "@mui/icons-material/Search";
 import LeftCard from "./components/left-card";
@@ -11,33 +11,22 @@ function Home() {
   const loadBusinesses = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/all_businesses",       {
-           headers: {
-          Authorization: "Bearer " + window.localStorage.getItem("token"),
-        },
-      });
+        "http://localhost:8000/api/all_businesses",
+        {
+          headers: {
+            Authorization: "Bearer " + window.localStorage.getItem("token"),
+          },
+        }
+      );
 
-      setBusinesses(response.data);
+      setBusinesses(response.data.businesses);
     } catch (error) {
-      console.error("Error loading coin requests data:", error);
+      console.error("Error loading data:", error);
     }
   };
   useEffect(() => {
     loadBusinesses();
-    
-    console.log( window.localStorage.getItem("token"))
   }, []);
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div>
@@ -61,10 +50,15 @@ function Home() {
       </div>
 
       <div className="investor-businesses-container flex column gap-20">
-        <LeftCard />
-        <RightCard/>
+        {Businesses?.map((business, index) => {
+          if (index % 2 === 0) {
+            return <LeftCard business={business} key={business.id} />;
+          } else {
+            return <RightCard business={business} key={business.id} />;
+          }
+        })}
       </div>
-        <Footer/>
+      <Footer />
     </div>
   );
 }
