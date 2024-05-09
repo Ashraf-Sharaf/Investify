@@ -24,7 +24,7 @@ function Signup({ onToggle }) {
           data
         );
         if (res.status === 200) {
-          // navigate('/home');
+          alert("good!")
         }
       } else {
         setError("Passwords do not match.");

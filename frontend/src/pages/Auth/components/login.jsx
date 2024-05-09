@@ -22,6 +22,7 @@ function Login({ onToggle }) {
           res.data.authorisation.token
         );
         // navigate('/home');
+        alert("logged");
         
       }
     } catch (error) {
@@ -43,6 +44,7 @@ function Login({ onToggle }) {
               }}
             ></input>
             <input
+              type="password"
               className="auth-inputs"
               placeholder="Password"
               onChange={(e) => {
