@@ -8,8 +8,9 @@ import Rating from "@mui/material/Rating";
 
 function SingleBuisness() {
   
-  const [value, setValue] = useState(0);
-
+  const [rating, setRating] = useState(0);
+  const [review, setReview] = useState("");
+  console.log(review)
   return (
     <div className="flex column ">
       <div className="investor-nav flex align padding-20 between">
@@ -60,16 +61,15 @@ function SingleBuisness() {
             <h4>Add Rating</h4>
             <div className="flex gap-10 ">
               <Rating
-                name="simple-controlled"
-                value={value}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
+                value={rating}
+                onChange={(event, newRating) => {
+                  setRating(newRating);
                 }}
               />
             </div>
             <h4>Add Review</h4>
             <div className="flex gap-20">
-              <input type="text" className="review-input"></input>
+              <input type="text" className="review-input" onChange={(event)=>{setReview(event.target.value)}}></input>
               <button className="review-button">Send</button>
             </div>
             <div className="flex center gap-20">
