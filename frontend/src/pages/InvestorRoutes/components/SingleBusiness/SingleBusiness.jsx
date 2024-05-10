@@ -93,7 +93,7 @@ function SingleBuisness() {
             <div className="flex gap-20">
               <input
                 type="text"
-                className="review-input"
+                className="review-input padding-10"
                 onChange={(event) => {
                   setReview(event.target.value);
                 }}
