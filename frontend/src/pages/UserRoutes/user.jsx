@@ -1,9 +1,9 @@
-import "./userr.css";
+import "./user.css";
 import HomeIcon from "@mui/icons-material/Home";
 import ComputerIcon from "@mui/icons-material/Computer";
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
-import PersonIcon from '@mui/icons-material/Person';
+import ReviewsIcon from '@mui/icons-material/Reviews';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 function User() {
@@ -17,6 +17,10 @@ function User() {
           <div className="flex gap-10 user-sidebar-navigation align" onClick={()=>{}}>
             <HomeIcon />
             <h3>Home</h3>
+          </div>
+          <div className="flex gap-10 user-sidebar-navigation align" onClick={()=>{}}>
+            <ReviewsIcon />
+            <h3>Reviews</h3>
           </div>
           <div className="flex gap-10 user-sidebar-navigation align" onClick={()=>{}}>
             <ComputerIcon />
