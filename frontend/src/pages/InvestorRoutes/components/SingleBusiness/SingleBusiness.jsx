@@ -37,12 +37,18 @@ function SingleBuisness() {
             <div className="book-meeting-popup flex padding-10 column around">
               <CloseIcon
                 className="popup-close"
+                onClick={() => {
+                  setPopup(false);
+                }}
               />
               <input type="date" className="popup-date" />
               <input type="time" className="popup-time" />
               <div className="flex around">
                 <button
                   className="popup-book-button"
+                  onClick={() => {
+                    setPopup(false);
+                  }}
                 >
                   Book
                 </button>
