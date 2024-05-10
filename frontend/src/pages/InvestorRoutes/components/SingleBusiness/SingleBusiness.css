@@ -56,6 +56,9 @@
   color: white;
   padding: 10px;
 }
+.popup-date::-webkit-calendar-picker-indicator,.popup-time::-webkit-calendar-picker-indicator{
+  filter: invert(1);
+}
 .popup-close{
   margin-left: auto;
   cursor:pointer;
