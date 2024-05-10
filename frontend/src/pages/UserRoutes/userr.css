@@ -16,8 +16,20 @@
   border-radius: 7px;
   padding: 5px;
   cursor: pointer;
- 
 }
 .page-shwon {
-background-color: #84B17F;
+  background-color: #84b17f;
+}
+.user-sidebar-logout {
+  margin-top: auto;
+  padding: 7px;
+  border-top: 3px solid black;
+}
+.logout-icon {
+  cursor: pointer;
+}
+.logout-icon:hover {
+  background-color: white;
+  color: #084f09;
+  border-radius: 5px;
 }

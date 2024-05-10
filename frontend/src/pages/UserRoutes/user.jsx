@@ -3,6 +3,8 @@ import HomeIcon from "@mui/icons-material/Home";
 import ComputerIcon from "@mui/icons-material/Computer";
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import PersonIcon from '@mui/icons-material/Person';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function User() {
   return (
@@ -28,6 +30,10 @@ function User() {
             <EventAvailableIcon/>
             <h3>Schedule</h3>
           </div>
+        </div>
+        <div className="user-sidebar-logout flex between align">
+          <h3>Logout</h3>
+          <LogoutIcon className="logout-icon"/>
         </div>
       </div>
     </div>
