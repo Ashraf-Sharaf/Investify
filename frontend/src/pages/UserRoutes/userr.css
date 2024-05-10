@@ -1,4 +1,4 @@
-.user-container{
+.user-container {
   min-height: 100vh;
   background-color: white;
 }
@@ -6,9 +6,18 @@
   width: 20%;
   min-height: 100%;
   background-color: #084f09;
-  color:white;
+  color: white;
 }
-.bottom-border{
+.bottom-border {
   border-bottom: 3px solid black;
 }
 
+.user-sidebar-navigation {
+  border-radius: 7px;
+  padding: 5px;
+  cursor: pointer;
+ 
+}
+.page-shwon {
+background-color: #84B17F;
+}
