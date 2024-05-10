@@ -110,7 +110,7 @@ function CompleteProfile() {
 
           <div className="additional-info gap-10 flex column">
             <h3>Additonal Information</h3>
-            <textarea rows="5"></textarea>
+            <textarea rows="4"></textarea>
           </div>
 
           <button className="complete-profile-button" onClick={()=>{navigate('/investor/home')}}>Submit</button>
