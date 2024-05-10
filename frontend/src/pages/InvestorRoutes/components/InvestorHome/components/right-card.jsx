@@ -1,4 +1,8 @@
+import {useNavigate} from "react-router-dom";
+
 function RightCard({ business }) {
+  const navigate = useNavigate();
+
   const { name, industry, description } = business;
   return (
     <div className="investor-business-card-right flex gap-20 -right ">
@@ -7,7 +11,7 @@ function RightCard({ business }) {
         <h4>{industry}</h4>
         <p>{description}</p>
 
-          <button className="investor-business-button-right">View more</button>
+          <button className="investor-business-button-right" onClick={()=>{navigate('/investor/single-business')}}>View more</button>
         
       </div>
       <div className="investor-business-img-right">
