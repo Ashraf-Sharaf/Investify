@@ -10,7 +10,7 @@ function SingleBuisness() {
   const [popup, setPopup] = useState(false);
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
-  console.log(review);
+
   return (
     <div className="flex column ">
       <div className="investor-nav flex align padding-20 between">
@@ -33,9 +33,22 @@ function SingleBuisness() {
       </div>
       <div className="flex center padding-20">
         <div className="single-business flex gap-10 ">
-          {popup && <div className="book-meeting-popup flex padding-10">
-            hi
-          </div>}
+          {popup && (
+            <div className="book-meeting-popup flex padding-10 column around">
+              <CloseIcon
+                className="popup-close"
+              />
+              <input type="date" className="popup-date" />
+              <input type="time" className="popup-time" />
+              <div className="flex around">
+                <button
+                  className="popup-book-button"
+                >
+                  Book
+                </button>
+              </div>
+            </div>
+          )}
           <div className="single-business-img">
             <img
               className="single-business-img"
@@ -82,7 +95,12 @@ function SingleBuisness() {
               <button className="review-button">Send</button>
             </div>
             <div className="flex center gap-20">
-              <button className="single-business-button" onClick={() => {setPopup(true)}}>
+              <button
+                className="single-business-button"
+                onClick={() => {
+                  setPopup(true);
+                }}
+              >
                 Book a meeting
               </button>
               <button className="single-business-button" onClick={() => {}}>

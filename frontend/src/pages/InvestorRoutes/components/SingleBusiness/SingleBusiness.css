@@ -46,6 +46,26 @@
   background-color: #f0f0f0;
   border:1px solid black;
   border-radius: 20px;
-  height: 300px;
+  height: 250px;
   width: 300px;
 }
+.popup-date,.popup-time{
+  height: 40px;
+  background-color: #084f09;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+}
+.popup-close{
+  margin-left: auto;
+  cursor:pointer;
+}
+.popup-book-button{
+  height: 30px;
+  width: 70px;
+  background-color: #084f09;
+  color: white;
+  border-radius: 70px;
+  cursor: pointer;
+}
+
