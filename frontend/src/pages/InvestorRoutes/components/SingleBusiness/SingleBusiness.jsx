@@ -7,10 +7,10 @@ import React, { useState } from "react";
 import Rating from "@mui/material/Rating";
 
 function SingleBuisness() {
-  
+  const [popup, setPopup] = useState(false);
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
-  console.log(review)
+  console.log(review);
   return (
     <div className="flex column ">
       <div className="investor-nav flex align padding-20 between">
@@ -33,6 +33,9 @@ function SingleBuisness() {
       </div>
       <div className="flex center padding-20">
         <div className="single-business flex gap-10 ">
+          {popup && <div className="book-meeting-popup flex padding-10">
+            hi
+          </div>}
           <div className="single-business-img">
             <img
               className="single-business-img"
@@ -69,12 +72,22 @@ function SingleBuisness() {
             </div>
             <h4>Add Review</h4>
             <div className="flex gap-20">
-              <input type="text" className="review-input" onChange={(event)=>{setReview(event.target.value)}}></input>
+              <input
+                type="text"
+                className="review-input"
+                onChange={(event) => {
+                  setReview(event.target.value);
+                }}
+              ></input>
               <button className="review-button">Send</button>
             </div>
             <div className="flex center gap-20">
-              <button className="single-business-button">Book a meeting</button>
-              <button className="single-business-button">Favorite</button>
+              <button className="single-business-button" onClick={() => {setPopup(true)}}>
+                Book a meeting
+              </button>
+              <button className="single-business-button" onClick={() => {}}>
+                Favorite
+              </button>
             </div>
           </div>
         </div>
