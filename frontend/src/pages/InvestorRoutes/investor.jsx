@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import CompleteProfile from "./components/CompleteProfile/completeProfile";
-import  Home from "./components/InvestorHome/InvestorHome";
-import SingleBuisness from "./components/SingleBusiness/SingleBusiness";
+import CompleteProfile from "./pages/CompleteProfile/completeProfile";
+import  Home from "./pages/InvestorHome/InvestorHome";
+import SingleBuisness from "./pages/SingleBusiness/SingleBusiness";
 
 function Investor() {
   return (
