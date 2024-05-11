@@ -6,11 +6,10 @@ import "./SingleBusiness.css";
 import React, { useState } from "react";
 import Rating from "@mui/material/Rating";
 
-function SingleBuisness() {
+function SingleBuisness({name}) {
   const [popup, setPopup] = useState(false);
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
-
   return (
     <div className="flex column ">
       <div className="investor-nav flex align padding-20 between">

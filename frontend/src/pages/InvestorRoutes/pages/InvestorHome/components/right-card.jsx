@@ -3,7 +3,10 @@ import {useNavigate} from "react-router-dom";
 function RightCard({ business }) {
   const navigate = useNavigate();
 
-  const { name, industry, description } = business;
+  const { id,name, industry, description } = business;
+  const handleViewMore = () => {
+    navigate(`/investor/single-business/${id}`);
+  };
   return (
     <div className="investor-business-card-right flex gap-20 -right ">
       <div className="investor-business-description-right padding-10 flex column gap-20">
@@ -11,7 +14,7 @@ function RightCard({ business }) {
         <h4>{industry}</h4>
         <p>{description}</p>
 
-          <button className="investor-business-button-right" onClick={()=>{navigate('/investor/single-business')}}>View more</button>
+          <button className="investor-business-button-right" onClick={()=>{handleViewMore()}}>View more</button>
         
       </div>
       <div className="investor-business-img-right">

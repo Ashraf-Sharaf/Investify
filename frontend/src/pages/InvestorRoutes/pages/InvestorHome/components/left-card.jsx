@@ -1,10 +1,12 @@
-import {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import SingleBuisness from "../../SingleBusiness/SingleBusiness";
 function LeftBusinesCard({ business }) {
   const navigate = useNavigate();
 
-  const { name, industry, description } = business;
-
+  const { id,name, industry, description } = business;
+  const handleViewMore = () => {
+    navigate(`/investor/single-business/${id}`);
+  };
   return (
     <div className="investor-business-card flex gap-20 ">
       <div className="investor-business-img">
@@ -15,8 +17,15 @@ function LeftBusinesCard({ business }) {
         <h4>{industry}</h4>
         <p>{description}</p>
         <div className="flex gap-10 center">
-          <button className="investor-business-button" onClick={()=>{navigate('/investor/single-business')}}>View more</button>
-          </div>
+          <button
+            className="investor-business-button"
+            onClick={() => {
+              handleViewMore()
+            }}
+          >
+            View more
+          </button>
+        </div>
       </div>
     </div>
   );

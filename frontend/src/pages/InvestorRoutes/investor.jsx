@@ -9,7 +9,7 @@ function Investor() {
       <Routes>
         <Route path="/" element={<CompleteProfile />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/single-business" element={<SingleBuisness />} />
+        <Route path="/single-business/*" element={<SingleBuisness />} />
       </Routes>
     </div>
   );
