@@ -9,6 +9,7 @@ import ReviewsIcon from "@mui/icons-material/Reviews";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 function Home() {
+  const name="ashraf";
   return (
     <div className="user-container flex">
       <div className="user-sidebar flex column padding-20 gap-20">
@@ -66,35 +67,36 @@ function Home() {
           <div className="user-business-info-container flex between padding-10 ">
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
-                <h3>First Name</h3>
+                <h3>Business Name</h3>
                 <input type="text"></input>
               </div>
               <div className="user-business-info-input flex  between center">
-                <h3>First Name</h3>
+                <h3>Location</h3>
                 <input type="text"></input>
               </div>
               <div className="user-business-info-input flex between center">
-                <h3>First Name</h3>
+                <h3>Industry</h3>
                 <input type="text"></input>
               </div>
             </div>
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
-                <h3>First Name</h3>
+              <h3>Funding Needed</h3>
                 <input type="text"></input>
               </div>
               <div className="user-business-info-input flex between center">
-                <h3>First Name</h3>
+                <h3>Stake Offered</h3>
                 <input type="text"></input>
               </div>
               <div className="user-business-info-input flex  between center">
-                <h3>First Name</h3>
+                <h3>Valuation</h3>
                 <input type="text"></input>
               </div>
             </div>
           </div>
-          <div className="flex padding-10 user-business-info-input">
+          <div className="flex padding-10 user-business-info-input gap-20">
             <h3>Description</h3>
+            <textarea rows="5"></textarea>
           </div>
         </div>
 

@@ -25,7 +25,16 @@ gap:100px;
 .user-business-info-input input{
     height: 30px;
     border-radius: 7px;
-    background-color: #bbbbbb;
+    background-color: #F6F6F6;
     width: 200px;
     padding: 10px;
+    border: 1px solid #bbbbbb;
+}
+.user-business-info-input textarea{
+    background-color: #f6f6f6;
+    padding: 10px;
+    border: 1px solid #bbbbbb;
+    border-radius: 7px;
+    width: 100%;
+
 }
