@@ -5,26 +5,26 @@ function Services() {
       <div className="service-cards flex around center">
         <div className="service-card flex column center">
           <div className="service-card-img flex ">
-            <img className="logo " src="/images/Investify.png" alt="logo"></img>
+            <img className="logo " src="/images/AI-avatar.jpeg" alt="logo"></img>
           </div>
           <div className="service-card-text flex center">
-            <p>We have i to use in our website and its fully helpfull</p>
+            <p>Empower your investments with cutting-edge AI assistance on our platform.</p>
           </div>
         </div>
         <div className="service-card flex column center">
           <div className="service-card-img flex ">
-            <img className="logo " src="/images/Investify.png" alt="logo"></img>
+            <img className="logo " src="/images/meeting.jpeg" alt="logo"></img>
           </div>
           <div className="service-card-text flex center">
-            <p>We have i to use in our website and its fully helpfull</p>
+            <p>Experience live meetings on our website offering customized support and guidance.</p>
           </div>
         </div>
         <div className="service-card flex column center">
           <div className="service-card-img flex ">
-            <img className="logo " src="/images/Investify.png" alt="logo"></img>
+            <img className="logo " src="/images/friendly-design.png" alt="logo"></img>
           </div>
           <div className="service-card-text flex center">
-            <p>We have i to use in our website and its fully helpfull</p>
+            <p>Experience seamless navigation through our user-friendly website design.</p>
           </div>
         </div>
       </div>
