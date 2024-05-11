@@ -1,6 +1,7 @@
 import "../sidebar.css";
 import "./home.css";
 
+import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import ComputerIcon from "@mui/icons-material/Computer";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
@@ -9,7 +10,12 @@ import ReviewsIcon from "@mui/icons-material/Reviews";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 function Home() {
-  const name="ashraf";
+  const navigate = useNavigate();
+  const logout = ()=>{
+    window.localStorage.setItem("token",null);
+    navigate('/');
+  }
+
   return (
     <div className="user-container flex">
       <div className="user-sidebar flex column padding-20 gap-20">
@@ -55,7 +61,7 @@ function Home() {
         </div>
         <div className="user-sidebar-logout flex between align">
           <h3>Logout</h3>
-          <LogoutIcon className="logout-icon" />
+          <LogoutIcon className="logout-icon" onClick={()=>{logout()}} />
         </div>
       </div>
 
