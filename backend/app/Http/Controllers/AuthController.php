@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\File;
 use App\Models\User;
+use App\Models\Role;
 
 class AuthController extends Controller
 {
@@ -27,9 +28,12 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
+        $role = Role::where('id', $user->id)->value('name');
+
+        
         return response()->json([
             'status' => 200,
-            'user' => $user,
+            'user_role' => $role,
             'authorisation' => [
                 'token' => $token,
                 'type' => 'bearer',
