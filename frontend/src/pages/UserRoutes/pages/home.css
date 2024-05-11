@@ -1,0 +1,31 @@
+.user-business{
+    width: 80%;
+    min-height: 100vh;
+    
+}
+.user-business-info{
+width: 100%;
+height: 70%;
+gap:50px;
+}
+.user-business-info-container{
+width: 100%;
+gap:100px;
+}
+.user-business-title{
+    height: 15%;
+}
+.user-business-button{
+    height: 15%;
+}
+.user-business-info-input {
+    font-size: larger;
+
+}
+.user-business-info-input input{
+    height: 30px;
+    border-radius: 7px;
+    background-color: #bbbbbb;
+    width: 200px;
+    padding: 10px;
+}
