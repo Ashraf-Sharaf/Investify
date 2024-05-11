@@ -15,15 +15,17 @@ function Login({ onToggle }) {
         password: password,
       };
 
-      const res =  await axios.post("http://127.0.0.1:8000/api/login", data);
-      if (res.data.status ==200) {
-        localStorage.setItem(
-          "token",
-          res.data.authorisation.token
-        );
-        navigate('/investor');
-     
-        
+      const res = await axios.post("http://127.0.0.1:8000/api/login", data);
+      if (res.data.status == 200) {
+        localStorage.setItem("token", res.data.authorisation.token);
+        console.log(res.data.user_role);
+        if (res.data.user_role == "investor") {
+          navigate("/investor");
+        } else if (res.data.user_role == "entrepreneur") {
+          navigate("/user");
+        } else if (res.data.user_role == "admin") {
+          // navigate("/admin");
+        }
       }
     } catch (error) {
       alert("Error");
