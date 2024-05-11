@@ -100,8 +100,8 @@ function Home() {
           </div>
         </div>
 
-        <div className="user-business-button flex center padding-10">
-          <button>Update</button>
+        <div className=" flex center padding-10">
+          <button className="user-business-button">Update</button>
         </div>
       </div>
     </div>
