@@ -34,7 +34,6 @@ function Home() {
       }
     } catch (error) {
       console.error("Error loading data:", error);
-      alert("error",error)
     }
   };
 

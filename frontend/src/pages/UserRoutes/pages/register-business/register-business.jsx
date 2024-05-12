@@ -44,7 +44,7 @@ function RegisterBusiness() {
         }
       );
       if (res.status !== 200) {
-        setError("Error, try again later!");
+        setError("Error, Check your inputs");
       } else {
         navigate("/user/home");
       }
@@ -159,6 +159,7 @@ function RegisterBusiness() {
         </div>
       </div>
       <Footer />
+      {error && <div className="error-message flex center column gap-20">{error}<button className="error-messge-button" onClick={()=>{setError(null)}}>Close</button></div>}
     </div>
   );
 }
