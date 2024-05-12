@@ -119,15 +119,15 @@ function Home() {
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
                 <h3>Funding Needed</h3>
-                <input type="text" placeholder={mybusiness.funding_needed}></input>
+                <input type="text" placeholder={mybusiness.funding_needed+" $"}></input>
               </div>
               <div className="user-business-info-input flex between center">
                 <h3>Stake Offered</h3>
-                <input type="text" placeholder={mybusiness.stake_offered}></input>
+                <input type="text" placeholder={mybusiness.stake_offered+" %"}></input>
               </div>
               <div className="user-business-info-input flex  between center">
                 <h3>Valuation</h3>
-                <input type="text" placeholder={mybusiness.valuation}></input>
+                <input type="text" placeholder={mybusiness.valuation+" $"}></input>
               </div>
             </div>
           </div>
