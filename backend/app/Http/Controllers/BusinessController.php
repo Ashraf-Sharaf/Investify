@@ -30,6 +30,12 @@ class BusinessController extends Controller
             ]);
         }
 
+        
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalExtension();
+        $filename = time() . '.' . $extension;
+        $file->move(public_path('/business_images/'), $filename);
+
         $business = Business::create([
             'name' => $request->name,
             'industry' => $request->industry,
@@ -39,6 +45,7 @@ class BusinessController extends Controller
             'stake_offered' => $request->stake_offered,
             'valuation' => $request->valuation,
             'entrepreneur_id' => $entrepreneurID,
+            'image'=>$filename
         ]);
 
         return response()->json([

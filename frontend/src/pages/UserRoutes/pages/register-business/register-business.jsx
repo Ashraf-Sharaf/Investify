@@ -33,7 +33,7 @@ function RegisterBusiness() {
       };
       reader.readAsDataURL(file);
     } else {
-      setImage("/images/Investify.png");
+      setImage("/images/null-state.PNG");
     }
   };
 
@@ -47,6 +47,7 @@ function RegisterBusiness() {
         funding_needed: funding,
         stake_offered: stake,
         valuation: valuation,
+        image:image
       };
   
       const res = await axios.post(
