@@ -73,7 +73,7 @@ class BusinessController extends Controller
         return response()->json([
             'status' => 200,
             'message' => 'Business retrieved successfully',
-            'businesses' => $business
+            'business' => $business
         ]);
     }
 
