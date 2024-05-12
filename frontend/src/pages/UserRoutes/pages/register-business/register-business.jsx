@@ -33,15 +33,26 @@ function RegisterBusiness() {
         stake_offered: stake,
         valuation: valuation,
       };
-
-      const res = await axios.post("http://127.0.0.1:8000/api/add_business", data);
-      if(res.status!=200){
+  
+      const res = await axios.post(
+        "http://127.0.0.1:8000/api/add_business",
+        data,
+        {
+          headers: {
+            Authorization: "Bearer " + window.localStorage.getItem("token"),
+          },
+        }
+      );
+      if (res.status !== 200) {
         setError("Error, try again later!");
+      } else {
+        navigate("/user/home");
       }
     } catch (error) {
       setError("Error, try again later!");
     }
   };
+  
 
   return (
     <div className="flex column gap-20">
@@ -96,7 +107,7 @@ function RegisterBusiness() {
               <div className="user-business-info-input flex between center">
                 <h3>Funding Needed</h3>
                 <input
-                  type="text"
+                  type="numeric"
                   onChange={(e) => {
                     setFunding(e.target.value);
                   }}
@@ -106,7 +117,7 @@ function RegisterBusiness() {
               <div className="user-business-info-input flex between center">
                 <h3>Stake Offered</h3>
                 <input
-                  type="text"
+                  type="numeric"
                   onChange={(e) => {
                     setStake(e.target.value);
                   }}
@@ -116,7 +127,7 @@ function RegisterBusiness() {
               <div className="user-business-info-input flex  between center">
                 <h3>Valuation</h3>
                 <input
-                  type="text"
+                  type="numeric"
                   onChange={(e) => {
                     setValuation(e.target.value);
                   }}
@@ -140,7 +151,6 @@ function RegisterBusiness() {
               className="user-business-button"
               onClick={() => {
                 registerBusiness();
-                navigate("/user/home");
               }}
             >
               Submit
