@@ -227,9 +227,10 @@ function Home() {
         </div>
 
         <div className=" flex center padding-10">
-          <button className="user-business-button">Update</button>
+          <button className="user-business-button" onClick={()=>{editBusiness()}}>Update</button>
         </div>
       </div>
+      {error && <div className="error-message flex center column gap-20">{error}<button className="error-messge-button" onClick={()=>{setError(null)}}>Close</button></div>}
     </div>
   );
 }
