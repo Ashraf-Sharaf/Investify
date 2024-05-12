@@ -30,8 +30,7 @@ function Home() {
         },
       });
        if (response.status === 200) {
-        setMybusiness(response.data.businesses);
-        console.log(response.data.businesses);
+        setMybusiness(response.data.business);
       }
     } catch (error) {
       console.error("Error loading data:", error);
@@ -106,35 +105,35 @@ function Home() {
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
                 <h3>Business Name</h3>
-                <input type="text"></input>
+                <input type="text" placeholder={mybusiness.name}></input>
               </div>
               <div className="user-business-info-input flex  between center">
                 <h3>Location</h3>
-                <input type="text"></input>
+                <input type="text" placeholder={mybusiness.location}></input>
               </div>
               <div className="user-business-info-input flex between center">
                 <h3>Industry</h3>
-                <input type="text"></input>
+                <input type="text" placeholder={mybusiness.industry}></input>
               </div>
             </div>
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
                 <h3>Funding Needed</h3>
-                <input type="text"></input>
+                <input type="text" placeholder={mybusiness.funding_needed}></input>
               </div>
               <div className="user-business-info-input flex between center">
                 <h3>Stake Offered</h3>
-                <input type="text"></input>
+                <input type="text" placeholder={mybusiness.stake_offered}></input>
               </div>
               <div className="user-business-info-input flex  between center">
                 <h3>Valuation</h3>
-                <input type="text"></input>
+                <input type="text" placeholder={mybusiness.valuation}></input>
               </div>
             </div>
           </div>
           <div className="flex padding-10 user-business-info-input gap-20">
             <h3>Description</h3>
-            <textarea rows="5"></textarea>
+            <textarea rows="5" placeholder={mybusiness.description}></textarea>
           </div>
         </div>
 
