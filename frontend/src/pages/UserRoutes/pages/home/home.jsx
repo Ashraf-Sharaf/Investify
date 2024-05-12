@@ -13,6 +13,20 @@ import { useState, useEffect } from "react";
 
 function Home() {
 
+  const [name, setName] = useState("");
+  const [location, setLocation] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [funding, setFunding] = useState("");
+  const [stake, setStake] = useState("");
+  const [valuation, setValuation] = useState("");
+  const [description, setDescription] = useState("");
+
+  const [error, setError] = useState(null);
+
+
+
+
+
   const [mybusiness,setMybusiness]=useState([]);
 
   const navigate = useNavigate();
@@ -103,36 +117,85 @@ function Home() {
           <div className="user-business-info-container flex between padding-10 ">
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
-                <h3>Business Name</h3>
-                <input type="text" placeholder={mybusiness.name}></input>
+              <h3>Business Name</h3>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                  placeholder={mybusiness.name}
+                  required
+                ></input>
               </div>
               <div className="user-business-info-input flex  between center">
                 <h3>Location</h3>
-                <input type="text" placeholder={mybusiness.location}></input>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setLocation(e.target.value);
+                  }}
+                  placeholder={mybusiness.location}
+                  required
+                ></input>
               </div>
               <div className="user-business-info-input flex between center">
                 <h3>Industry</h3>
-                <input type="text" placeholder={mybusiness.industry}></input>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setIndustry(e.target.value);
+                  }}
+                  placeholder={mybusiness.industry}
+                  required
+                ></input>
               </div>
             </div>
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
                 <h3>Funding Needed</h3>
-                <input type="text" placeholder={mybusiness.funding_needed+" $"}></input>
+                <input
+                  type="numeric"
+                  onChange={(e) => {
+                    setFunding(e.target.value);
+                  }}
+                  placeholder={mybusiness.funding_needed+" $"}
+                  required
+                ></input>
               </div>
               <div className="user-business-info-input flex between center">
                 <h3>Stake Offered</h3>
-                <input type="text" placeholder={mybusiness.stake_offered+" %"}></input>
+                <input
+                  type="numeric"
+                  onChange={(e) => {
+                    setStake(e.target.value);
+                  }}
+                  placeholder={mybusiness.stake_offered+" %"}
+                  required
+                ></input>
               </div>
               <div className="user-business-info-input flex  between center">
                 <h3>Valuation</h3>
-                <input type="text" placeholder={mybusiness.valuation+" $"}></input>
+                <input
+                  type="numeric"
+                  onChange={(e) => {
+                    setValuation(e.target.value);
+                  }}
+                  placeholder={mybusiness.valuation+" $"}
+                  required
+                ></input>
               </div>
             </div>
           </div>
-          <div className="flex padding-10 user-business-info-input gap-20">
+          <div className="flex padding-10 user-business-info-input gap-20 full-w">
             <h3>Description</h3>
-            <textarea rows="5" placeholder={mybusiness.description}></textarea>
+            <textarea
+              rows="5"
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
+              placeholder={mybusiness.description}
+              required
+            ></textarea>
           </div>
         </div>
 
