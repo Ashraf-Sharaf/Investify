@@ -13,6 +13,7 @@ function RegisterBusiness() {
     navigate("/");
   };
 
+  const [image, setImage] = useState("/images/null-state.PNG");
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [industry, setIndustry] = useState("");
@@ -21,6 +22,20 @@ function RegisterBusiness() {
   const [valuation, setValuation] = useState("");
   const [description, setDescription] = useState("");
   const [error, setError] = useState(null);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setImage("/images/Investify.png");
+    }
+  };
 
   const registerBusiness = async () => {
     try {
