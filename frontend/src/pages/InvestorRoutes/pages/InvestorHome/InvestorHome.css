@@ -21,8 +21,10 @@
 
 .investor-businesses-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 40px;
+  padding-bottom: 40px;
+
 }
 
 
