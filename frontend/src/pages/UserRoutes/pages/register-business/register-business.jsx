@@ -1,8 +1,11 @@
 import "./register-business.css";
 import Footer from "../../../Footer/Footer";
-import { useNavigate } from "react-router-dom";
-function RegisterBusiness() {
 
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+function RegisterBusiness() {
   const navigate = useNavigate();
 
   const logout = () => {
@@ -10,6 +13,14 @@ function RegisterBusiness() {
     navigate("/");
   };
 
+  const [name, setName] = useState("");
+  const [location, setLocation] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [funding, setFunding] = useState("");
+  const [stake, setStake] = useState("");
+  const [valuation, setValuation] = useState("");
+  const [description, setDescription] = useState("");
+  const [error, setError] = useState(null);
 
   return (
     <div className="flex column gap-20">
@@ -31,38 +42,87 @@ function RegisterBusiness() {
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
                 <h3>Business Name</h3>
-                <input type="text"></input>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                  required
+                ></input>
               </div>
               <div className="user-business-info-input flex  between center">
                 <h3>Location</h3>
-                <input type="text"></input>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setLocation(e.target.value);
+                  }}
+                  required
+                ></input>
               </div>
               <div className="user-business-info-input flex between center">
                 <h3>Industry</h3>
-                <input type="text"></input>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setIndustry(e.target.value);
+                  }}
+                  required
+                ></input>
               </div>
             </div>
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
                 <h3>Funding Needed</h3>
-                <input type="text"></input>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setFunding(e.target.value);
+                  }}
+                  required
+                ></input>
               </div>
               <div className="user-business-info-input flex between center">
                 <h3>Stake Offered</h3>
-                <input type="text"></input>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setStake(e.target.value);
+                  }}
+                  required
+                ></input>
               </div>
               <div className="user-business-info-input flex  between center">
                 <h3>Valuation</h3>
-                <input type="text"></input>
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setValuation(e.target.value);
+                  }}
+                  required
+                ></input>
               </div>
             </div>
           </div>
           <div className="flex padding-10 user-business-info-input gap-20 full-w">
             <h3>Description</h3>
-            <textarea rows="5"></textarea>
+            <textarea
+              rows="5"
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
+              required
+            ></textarea>
           </div>
           <div className=" flex center padding-10">
-            <button className="user-business-button" onClick={()=>{navigate('/user/home')}}>Submit</button>
+            <button
+              className="user-business-button"
+              onClick={() => {
+                navigate("/user/home");
+              }}
+            >
+              Submit
+            </button>
           </div>
         </div>
       </div>
