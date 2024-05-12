@@ -68,8 +68,21 @@ function RegisterBusiness() {
       </div>
 
       <div className="flex center">
+        
         <div className="register-business-container center flex column around">
           <h1>Register Your Business</h1>
+          <div className="complete-profile-upload-image flex center gap-10 column  ">
+            <div className="image-uploaded">
+              <img src={image} alt="Upload your picture" />
+
+            </div>
+            <div>
+              <label for="file-upload" class="custom-file-upload">
+                <input id="file-upload" type="file" onChange={handleFileChange}/>
+                Upload File
+              </label>
+            </div>
+          </div>
           <div className="user-business-info-container flex between padding-10">
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">

@@ -1,6 +1,6 @@
 .register-business-container{
     background-color: #F6F6F6 ;
-    height: 80vh;
+    min-height: 80vh;
     width: 70%;
     border-radius: 30px;
 }
