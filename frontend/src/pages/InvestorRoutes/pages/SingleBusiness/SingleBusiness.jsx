@@ -1,12 +1,13 @@
 import SearchIcon from "@mui/icons-material/Search";
-import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
 import CloseIcon from "@mui/icons-material/Close";
 import Footer from "../../../Footer/Footer";
 import "./SingleBusiness.css";
 import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
 import Rating from "@mui/material/Rating";
 
 function SingleBuisness({name}) {
+  const navigate=useNavigate();
   const [popup, setPopup] = useState(false);
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
@@ -64,7 +65,7 @@ function SingleBuisness({name}) {
           <div className="single-business-details flex column padding-10 gap-20">
             <div className="flex between">
               <h2>Business name</h2>
-              <CloseIcon />
+              <CloseIcon className="close-icon" onClick={()=>navigate('/investor/home')} />
             </div>
             <h4>Beirut, Lebanon</h4>
             <h4>Industry</h4>
