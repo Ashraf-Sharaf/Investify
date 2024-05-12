@@ -17,8 +17,8 @@ class Business extends Model
         'funding_needed',
         'stake_offered',
         'valuation',
-        'entrepreneur_id'
-
+        'entrepreneur_id',
+        'image'
     ];
 
     public function owner()
