@@ -13,11 +13,9 @@ function LeftBusinesCard({ business }) {
         <img src="/images/Investify.png" alt="No image" />
       </div>
       <div className="investor-business-description padding-10 flex column gap-20">
-        <div>
-          <h1>{name}</h1>
-          <h4>{industry}</h4>
-          <p>{description}</p>
-        </div>
+        <h1>{name}</h1>
+        <h4>{industry}</h4>
+        <p>{description}</p>
 
         <div className="investor-business-button flex center">
           <button
