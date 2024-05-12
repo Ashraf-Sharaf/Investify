@@ -1,6 +1,7 @@
 import "../../sidebar.css";
 import "./home.css";
 
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import ComputerIcon from "@mui/icons-material/Computer";
@@ -8,13 +9,39 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useState, useEffect } from "react";
 
 function Home() {
+
+  const [mybusiness,setMybusiness]=useState([]);
+
   const navigate = useNavigate();
-  const logout = ()=>{
-    window.localStorage.setItem("token",null);
-    navigate('/');
-  }
+
+  const logout = () => {
+    window.localStorage.setItem("token", null);
+    navigate("/");
+  };
+
+  const getUserBusiness = async () => {
+    try {
+      const response = await axios.get("http://127.0.0.1:8000/api/my_business", {
+        headers: {
+          Authorization: "Bearer " + window.localStorage.getItem("token"),
+        },
+      });
+       if (response.status === 200) {
+        setMybusiness(response.data.businesses);
+        console.log(response.data.businesses);
+      }
+    } catch (error) {
+      console.error("Error loading data:", error);
+      alert("error",error)
+    }
+  };
+
+  useEffect(() => {
+    getUserBusiness();
+  }, []);
 
   return (
     <div className="flex">
@@ -61,7 +88,12 @@ function Home() {
         </div>
         <div className="user-sidebar-logout flex between align">
           <h3>Logout</h3>
-          <LogoutIcon className="logout-icon" onClick={()=>{logout()}} />
+          <LogoutIcon
+            className="logout-icon"
+            onClick={() => {
+              logout();
+            }}
+          />
         </div>
       </div>
 
@@ -87,7 +119,7 @@ function Home() {
             </div>
             <div className="flex half-w column gap-20">
               <div className="user-business-info-input flex between center">
-              <h3>Funding Needed</h3>
+                <h3>Funding Needed</h3>
                 <input type="text"></input>
               </div>
               <div className="user-business-info-input flex between center">
