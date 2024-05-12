@@ -61,9 +61,9 @@ class BusinessController extends Controller
     {
         $entrepreneurID = Auth::id();
 
-        $business = Business::where('entrepreneur_id', $entrepreneurID)->get();
+        $business = Business::where('entrepreneur_id', $entrepreneurID)->first();
 
-        if ($business->isEmpty()) {
+        if (!$business) {
             return response()->json([
                 'status' => 204,
                 'message' => "No Business Found"
