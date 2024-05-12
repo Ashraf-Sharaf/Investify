@@ -12,6 +12,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { useState, useEffect } from "react";
 
 function Home() {
+  
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -20,22 +22,11 @@ function Home() {
   const [stake, setStake] = useState("");
   const [valuation, setValuation] = useState("");
   const [description, setDescription] = useState("");
-
+  const [mybusiness,setMybusiness]=useState([]);
+  
   const [error, setError] = useState(null);
 
-
-
-
-
-  const [mybusiness,setMybusiness]=useState([]);
-
-  const navigate = useNavigate();
-
-  const logout = () => {
-    window.localStorage.setItem("token", null);
-    navigate("/");
-  };
-
+  
   const getUserBusiness = async () => {
     try {
       const response = await axios.get("http://127.0.0.1:8000/api/my_business", {
@@ -43,12 +34,48 @@ function Home() {
           Authorization: "Bearer " + window.localStorage.getItem("token"),
         },
       });
-       if (response.status === 200) {
+      if (response.status === 200) {
         setMybusiness(response.data.business);
       }
     } catch (error) {
-      console.error("Error loading data:", error);
+      setError("Error loading data");
     }
+  };
+
+
+  const editBusiness = async () => {
+    try {
+
+      const data = {
+        name: name,
+        industry: industry,
+        location: location,
+        description: description,
+        funding_needed: funding,
+        stake_offered: stake,
+        valuation: valuation,
+      };
+
+      const response = await axios.post("http://127.0.0.1:8000/api/edit_business",data, {
+        headers: {
+          Authorization: "Bearer " + window.localStorage.getItem("token"),
+        },
+      });
+      console.log(response)
+      if (response.status == 200) {
+        setError(response.data.message);
+      }else{
+        setError("Error, try again later!");
+      }
+    } catch (error) {
+      setError("Error, try again later!");
+    }
+  };
+  
+  
+  const logout = () => {
+    window.localStorage.setItem("token", null);
+    navigate("/");
   };
 
   useEffect(() => {
