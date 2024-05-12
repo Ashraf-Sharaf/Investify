@@ -23,8 +23,8 @@ function Signup({ onToggle }) {
           "http://127.0.0.1:8000/api/register",
           data
         );
-        if (res.status === 200) {
-          alert("good!")
+        if (res.status !== 200) {
+          setError("Error, try again later!");
         }
       } else {
         setError("Passwords do not match.");
@@ -92,10 +92,11 @@ function Signup({ onToggle }) {
           >
             Sign Up
           </button>
-          {error && <div className="error-message">{error}</div>}
+
           
         </div>
       </div>
+      {error && <div className="error-message flex center column gap-20">{error}<button className="error-messge-button" onClick={()=>{setError(null)}}>Close</button></div>}
     </div>
   );
 }
