@@ -22,6 +22,13 @@ class BusinessController extends Controller
         ]);
 
         $entrepreneurID = Auth::id();
+        $checkBusiness = Business::where('entrepreneur_id', $entrepreneurID)->first();
+        if ($checkBusiness) {
+            return response()->json([
+                'status' => 403,
+                'message' => "User already have a businesses"
+            ]);
+        }
 
         $business = Business::create([
             'name' => $request->name,
