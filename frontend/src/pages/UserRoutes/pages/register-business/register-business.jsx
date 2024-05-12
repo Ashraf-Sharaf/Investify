@@ -22,6 +22,27 @@ function RegisterBusiness() {
   const [description, setDescription] = useState("");
   const [error, setError] = useState(null);
 
+  const registerBusiness = async () => {
+    try {
+      const data = {
+        name: name,
+        industry: industry,
+        location: location,
+        description: description,
+        funding_needed: funding,
+        stake_offered: stake,
+        valuation: valuation,
+      };
+
+      const res = await axios.post("http://127.0.0.1:8000/api/add_business", data);
+      if(res.status!=200){
+        setError("Error, try again later!");
+      }
+    } catch (error) {
+      setError("Error, try again later!");
+    }
+  };
+
   return (
     <div className="flex column gap-20">
       <div className="investor-nav flex align padding-20 between">
@@ -118,6 +139,7 @@ function RegisterBusiness() {
             <button
               className="user-business-button"
               onClick={() => {
+                registerBusiness();
                 navigate("/user/home");
               }}
             >
