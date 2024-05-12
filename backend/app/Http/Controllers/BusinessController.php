@@ -97,23 +97,16 @@ class BusinessController extends Controller
             ]);
         }
 
-        $data = $request->validate([
-            'name' => 'string',
-            'industry' => 'string',
-            'location' => 'string',
-            'description' => 'string',
-            'funding_needed' => 'numeric',
-            'stake_offered' => 'numeric',
-            'valuation' => 'numeric',
-        ]);
+        $data = $request->all();
 
         $business = Business::findOrFail($businessID);
 
         foreach ($data as $attribute => $value) {
-            if (!is_null($value)) {
+            if (!empty($value)) {
                 $business->$attribute = $value;
             }
         }
+        
 
         $business->save();
 
