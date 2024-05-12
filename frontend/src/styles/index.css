@@ -23,3 +23,25 @@ code {
   height: 60px;
   border-radius: 50%;
 }
+.error-message{
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 100px;
+  font-size: 28px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  border:1px solid black;
+}
+.error-messge-button{
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: fit-content;
+  background-color: #084f09;
+  width: fit-content;
+  font-size: 16px;
+  color: white;
+}
