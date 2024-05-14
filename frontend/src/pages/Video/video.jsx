@@ -96,7 +96,7 @@ function Video() {
                 
                 url={videoStream}
                 
-                height={"400px"}
+                height={"300px"}
                 width={"300px"}
                 onError={(err) => {
                   console.log(err, "participant video error");
@@ -137,11 +137,12 @@ function Video() {
     };
 
     return (
-      <div className="container">
+      <div className="meet-container flex padding-10 gap-20 column center">
         <h3>Meeting Id: {props.meetingId}</h3>
         {joined && joined == "JOINED" ? (
           <div>
             <Controls />
+            <div className="camera-view flex ">
             {[...participants.keys()].map((participantId) => (
               <ParticipantView
                 participantId={participantId}
@@ -149,10 +150,11 @@ function Video() {
               />
             ))}
           </div>
+          </div>
         ) : joined && joined == "JOINING" ? (
           <p>Joining the meeting...</p>
         ) : (
-          <button onClick={joinMeeting}>Join</button>
+          <button className="join-button" onClick={joinMeeting}>Join</button>
         )}
       </div>
     );
