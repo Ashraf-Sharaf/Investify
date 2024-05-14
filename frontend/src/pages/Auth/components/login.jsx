@@ -38,6 +38,7 @@ function Login({ onToggle }) {
         <div className="flex column center auth-section">
           <div className="flex column between center  auth-form">
             <h1>Login</h1>
+            <div className="flex center gap-20 column full-w">
             <input
               className="auth-inputs"
               placeholder="E-mail"
@@ -53,6 +54,7 @@ function Login({ onToggle }) {
                 setPassword(e.target.value);
               }}
             ></input>
+            </div>
             <button
               className="auth-button"
               onClick={() => {

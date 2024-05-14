@@ -47,6 +47,7 @@ function Signup({ onToggle }) {
       <div className="flex column center auth-section">
         <div className="flex column between center  auth-form">
           <h1>Sign Up</h1>
+          
           <input type="email"
             className="auth-inputs"
             placeholder="First Name"
