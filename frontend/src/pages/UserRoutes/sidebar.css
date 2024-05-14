@@ -8,9 +8,7 @@
   background-color: #084f09;
   color: white;
 }
-.bottom-border {
-  border-bottom: 3px solid black;
-}
+
 
 .user-sidebar-navigation {
   border-radius: 7px;
@@ -18,12 +16,13 @@
   cursor: pointer;
 }
 .page-shown {
+  height: 40px;
   background-color: #84b17f;
 }
 .user-sidebar-logout {
   margin-top: auto;
   padding: 7px;
-  border-top: 3px solid black;
+  
 }
 .logout-icon {
   cursor: pointer;
