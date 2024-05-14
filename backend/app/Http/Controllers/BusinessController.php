@@ -30,7 +30,7 @@ class BusinessController extends Controller
             ]);
         }
 
-        
+
         $file = $request->file('image');
         $extension = $file->getClientOriginalExtension();
         $filename = time() . '.' . $extension;
@@ -45,7 +45,7 @@ class BusinessController extends Controller
             'stake_offered' => $request->stake_offered,
             'valuation' => $request->valuation,
             'entrepreneur_id' => $entrepreneurID,
-            'image'=>$filename
+            'image' => $filename
         ]);
 
         return response()->json([
@@ -113,7 +113,7 @@ class BusinessController extends Controller
                 $business->$attribute = $value;
             }
         }
-        
+
 
         $business->save();
 
@@ -122,5 +122,26 @@ class BusinessController extends Controller
             'message' => 'Business edited successfully',
 
         ]);
+    }
+
+
+    public function get_business(Request $request)
+    {
+
+        $business = Business::where('id', $request->business_id)->first();
+        if (!$business) {
+            return response()->json([
+                'status' => 204,
+                'message' => "No Business Found"
+            ]);
+        } else {
+
+            return response()->json([
+                'status' => 200,
+                'message' => 'Business retrieved successfully',
+                'business' => $business
+
+            ]);
+        }
     }
 }
