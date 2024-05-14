@@ -65,7 +65,7 @@ function SingleBuisness({name}) {
           <div className="single-business-details flex column padding-10 gap-20">
             <div className="flex between">
               <h2>Business name</h2>
-              <CloseIcon className="close-icon" onClick={()=>navigate('/investor/home')} />
+              <CloseIcon className="close-icon" onClick={()=>navigate('/investor')} />
             </div>
             <h4>Beirut, Lebanon</h4>
             <h4>Industry</h4>
