@@ -3,7 +3,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Footer from "../../../Footer/Footer";
 import "./SingleBusiness.css";
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate,useParams} from "react-router-dom";
 import Rating from "@mui/material/Rating";
 
 function SingleBuisness({name}) {
@@ -11,6 +11,10 @@ function SingleBuisness({name}) {
   const [popup, setPopup] = useState(false);
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
+
+  const { id } = useParams();
+
+
   return (
     <div className="flex column ">
       <div className="investor-nav flex align padding-20 between">
@@ -68,7 +72,7 @@ function SingleBuisness({name}) {
               <CloseIcon className="close-icon" onClick={()=>navigate('/investor')} />
             </div>
             <h4>Beirut, Lebanon</h4>
-            <h4>Industry</h4>
+            <h4>{id}</h4>
             <h4>Valuation : 100,000$</h4>
             <h4>Funding needed : 50,000$</h4>
             <h4>Stake offered : 45% of the company</h4>
