@@ -27,27 +27,23 @@ function RegisterBusiness() {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setImageData(file);
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImage(reader.result);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      setImage("/images/null-state.PNG");
-    }
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setImage(reader.result);
+    };
   };
 
   const registerBusiness = async () => {
     try {
       const data = new FormData();
-      data.append('name', name);
-      data.append('industry', industry);
-      data.append('location', location);
-      data.append('description', description);
-      data.append('funding', funding);
-      data.append('stake', stake);
-      data.append('valuation', valuation);
+      data.append("name", name);
+      data.append("industry", industry);
+      data.append("location", location);
+      data.append("description", description);
+      data.append("funding", funding);
+      data.append("stake", stake);
+      data.append("valuation", valuation);
       // data.append('image', imageData);
 
       const res = await axios.post(
@@ -56,7 +52,7 @@ function RegisterBusiness() {
         {
           headers: {
             Authorization: "Bearer " + window.localStorage.getItem("token"),
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         }
       );
@@ -69,7 +65,6 @@ function RegisterBusiness() {
       setError("Error, try again later!");
     }
   };
-  
 
   return (
     <div className="flex column gap-20">
@@ -85,17 +80,19 @@ function RegisterBusiness() {
       </div>
 
       <div className="flex center">
-        
         <div className="register-business-container center flex column around">
           <h1>Register Your Business</h1>
           <div className="complete-profile-upload-image flex center gap-10 column  ">
             <div className="image-uploaded">
               <img src={image} alt="Upload your picture" />
-
             </div>
             <div>
               <label for="file-upload" class="custom-file-upload">
-                <input id="file-upload" type="file" onChange={handleFileChange}/>
+                <input
+                  id="file-upload"
+                  type="file"
+                  onChange={handleFileChange}
+                />
                 Upload File
               </label>
             </div>
@@ -181,7 +178,7 @@ function RegisterBusiness() {
               className="user-business-button"
               onClick={() => {
                 // registerBusiness();
-                navigate('/user/home')
+                navigate("/user/home");
               }}
             >
               Submit
@@ -190,7 +187,19 @@ function RegisterBusiness() {
         </div>
       </div>
       <Footer />
-      {error && <div className="error-message flex center column gap-20">{error}<button className="error-messge-button" onClick={()=>{setError(null)}}>Close</button></div>}
+      {error && (
+        <div className="error-message flex center column gap-20">
+          {error}
+          <button
+            className="error-messge-button"
+            onClick={() => {
+              setError(null);
+            }}
+          >
+            Close
+          </button>
+        </div>
+      )}
     </div>
   );
 }
