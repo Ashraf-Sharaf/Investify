@@ -78,7 +78,7 @@ function Video() {
         }, [micStream, micOn]);
       
         return (
-          <div>
+          <div className="participant flex center column around">
             <p>
               Participant: {displayName} | Webcam: {webcamOn ? "ON" : "OFF"} | Mic:{" "}
               {micOn ? "ON" : "OFF"}

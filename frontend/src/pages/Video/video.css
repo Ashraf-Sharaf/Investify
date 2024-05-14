@@ -24,7 +24,6 @@
   }
  .camera-view{
     width: 100%;
-    background-color: red;
     gap:100px;
  }
 
@@ -53,4 +52,9 @@
     width: 60px;
     cursor: pointer;
     border-radius: 5px;
+  }
+  .participant{
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    border-radius: 10px;
   }
