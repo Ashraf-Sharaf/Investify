@@ -14,6 +14,7 @@ function RegisterBusiness() {
   };
 
   const [image, setImage] = useState("/images/null-state.PNG");
+  const [imageData, setImageData] = useState("");
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [industry, setIndustry] = useState("");
@@ -25,7 +26,7 @@ function RegisterBusiness() {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-
+    setImageData(file);
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -39,23 +40,23 @@ function RegisterBusiness() {
 
   const registerBusiness = async () => {
     try {
-      const data = {
-        name: name,
-        industry: industry,
-        location: location,
-        description: description,
-        funding_needed: funding,
-        stake_offered: stake,
-        valuation: valuation,
-        image:image
-      };
-  
+      const data = new FormData();
+      data.append('name', name);
+      data.append('industry', industry);
+      data.append('location', location);
+      data.append('description', description);
+      data.append('funding', funding);
+      data.append('stake', stake);
+      data.append('valuation', valuation);
+      // data.append('image', imageData);
+
       const res = await axios.post(
         "http://127.0.0.1:8000/api/add_business",
         data,
         {
           headers: {
             Authorization: "Bearer " + window.localStorage.getItem("token"),
+            'Content-Type': 'multipart/form-data',
           },
         }
       );
@@ -179,7 +180,8 @@ function RegisterBusiness() {
             <button
               className="user-business-button"
               onClick={() => {
-                registerBusiness();
+                // registerBusiness();
+                navigate('/user/home')
               }}
             >
               Submit
