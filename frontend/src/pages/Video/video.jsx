@@ -8,12 +8,9 @@ import {
 import { authToken, createMeeting } from "./API";
 import ReactPlayer from "react-player";
 
-
-
 function Video() {
   const [meetingId, setMeetingId] = useState(null);
 
- 
   const getMeetingAndToken = async (id) => {
     const meetingId =
       id == null ? await createMeeting({ token: authToken }) : id;
@@ -44,24 +41,23 @@ function Video() {
       </div>
     );
   }
-  
+
   function ParticipantView(props) {
     return null;
   }
-  
+
   function Controls(props) {
     return null;
   }
-  
+
   function MeetingView(props) {
     const [joined, setJoined] = useState(null);
 
     const { join, participants } = useMeeting({
-     
       onMeetingJoined: () => {
         setJoined("JOINED");
       },
-   
+
       onMeetingLeft: () => {
         props.onMeetingLeave();
       },
@@ -70,14 +66,13 @@ function Video() {
       setJoined("JOINING");
       join();
     };
-  
+
     return (
       <div className="container">
         <h3>Meeting Id: {props.meetingId}</h3>
         {joined && joined == "JOINED" ? (
           <div>
             <Controls />
-            //For rendering all the participants in the meeting
             {[...participants.keys()].map((participantId) => (
               <ParticipantView
                 participantId={participantId}
@@ -93,7 +88,7 @@ function Video() {
       </div>
     );
   }
-  
+
   return authToken && meetingId ? (
     <MeetingProvider
       config={{
