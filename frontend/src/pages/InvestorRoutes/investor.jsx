@@ -7,8 +7,8 @@ function Investor() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<CompleteProfile />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/complete-profile" element={<CompleteProfile />} />
         <Route path="/single-business/*" element={<SingleBuisness />} />
       </Routes>
     </div>
