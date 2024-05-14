@@ -136,7 +136,7 @@ function Home() {
         <div className="user-business-info flex column">
           <div className="user-business-info-container flex between padding-10 ">
             <div className="flex half-w column gap-20">
-              <div className="user-business-info-input flex between center">
+              <div className="user-business-edit-info-input flex between center">
               <h3>Business Name</h3>
                 <input
                   type="text"
@@ -147,7 +147,7 @@ function Home() {
                   required
                 ></input>
               </div>
-              <div className="user-business-info-input flex  between center">
+              <div className="user-business-edit-info-input flex  between center">
                 <h3>Location</h3>
                 <input
                   type="text"
@@ -158,7 +158,7 @@ function Home() {
                   required
                 ></input>
               </div>
-              <div className="user-business-info-input flex between center">
+              <div className="user-business-edit-info-input flex between center">
                 <h3>Industry</h3>
                 <input
                   type="text"
@@ -171,7 +171,7 @@ function Home() {
               </div>
             </div>
             <div className="flex half-w column gap-20">
-              <div className="user-business-info-input flex between center">
+              <div className="user-business-edit-info-input flex between center">
                 <h3>Funding Needed</h3>
                 <input
                   type="numeric"
@@ -182,7 +182,7 @@ function Home() {
                   required
                 ></input>
               </div>
-              <div className="user-business-info-input flex between center">
+              <div className="user-business-edit-info-input flex between center">
                 <h3>Stake Offered</h3>
                 <input
                   type="numeric"
@@ -193,7 +193,7 @@ function Home() {
                   required
                 ></input>
               </div>
-              <div className="user-business-info-input flex  between center">
+              <div className="user-business-edit-info-input flex  between center">
                 <h3>Valuation</h3>
                 <input
                   type="numeric"
