@@ -96,7 +96,7 @@ function Video() {
                 
                 url={videoStream}
                 
-                height={"300px"}
+                height={"400px"}
                 width={"300px"}
                 onError={(err) => {
                   console.log(err, "participant video error");
@@ -111,7 +111,7 @@ function Video() {
   function Controls() {
     const { leave, toggleMic, toggleWebcam } = useMeeting();
     return (
-      <div>
+      <div className="controls flex center gap-20">
         <button onClick={() => leave()}>Leave</button>
         <button onClick={() => toggleMic()}>toggleMic</button>
         <button onClick={() => toggleWebcam()}>toggleWebcam</button>

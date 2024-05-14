@@ -20,4 +20,19 @@
     color:white;
     border-radius: 7px;
     width: 100px;
+    cursor: pointer;
+  }
+  
+
+  .controls{
+    height: 50px;
+  }
+  .controls button{
+    height: 40px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: #084f09;
   }
