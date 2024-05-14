@@ -1,3 +1,4 @@
+import "./video.css";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   MeetingProvider,
@@ -27,7 +28,8 @@ function Video() {
       await getMeetingAndToken(meetingId);
     };
     return (
-      <div>
+      <div className="join-screen flex center">
+         <div className="flex center gap-20 join-form">
         <input
           type="text"
           placeholder="Enter Meeting Id"
@@ -38,6 +40,7 @@ function Video() {
         <button onClick={onClick}>Join</button>
         {" or "}
         <button onClick={onClick}>Create Meeting</button>
+      </div>
       </div>
     );
   }
