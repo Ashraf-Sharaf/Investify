@@ -42,7 +42,7 @@ function Video() {
     );
   }
 
-  function ParticipantView(props) {
+ 
     function ParticipantView(props) {
         const micRef = useRef(null);
         const { webcamStream, micStream, webcamOn, micOn, isLocal, displayName } =
@@ -102,7 +102,7 @@ function Video() {
             )}
           </div>
         );
-      }
+      
   }
 
   function Controls() {
@@ -161,7 +161,7 @@ function Video() {
         meetingId,
         micEnabled: true,
         webcamEnabled: true,
-        name: " ",
+        name: "",
       }}
       token={authToken}
     >
