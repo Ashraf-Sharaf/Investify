@@ -12,6 +12,7 @@
 .single-business-details {
   height: 100%;
   width: 78%;
+  position: relative;
 }
 .review-input {
   width: 80%;
@@ -80,4 +81,12 @@
 .close-icon{
   cursor: pointer;
 }
-
+.rating-container{  
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 10px;
+  
+  
+}
