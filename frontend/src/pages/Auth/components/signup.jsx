@@ -29,6 +29,7 @@ function Signup({ onToggle }) {
         if (res.status !== 200) {
           setError("Error, try again later!");
         }else{
+          localStorage.setItem("token", res.data.authorisation.token);
           navigate("/user");
         }
       } else {
