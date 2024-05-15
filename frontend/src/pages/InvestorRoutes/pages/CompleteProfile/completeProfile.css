@@ -65,6 +65,8 @@
   width: 100px;
   height: 100px;
   border-radius: 10px;
+  border: #000000 solid 1px;
+
 }
 .custom-file-upload {
   padding: 10px;
@@ -76,5 +78,6 @@
 }
 
 .custom-file-upload input {
+  
   display: none;
 }
