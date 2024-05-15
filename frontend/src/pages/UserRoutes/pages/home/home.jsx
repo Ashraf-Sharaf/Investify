@@ -14,6 +14,8 @@ import { useState, useEffect } from "react";
 function Home() {
   
   const navigate = useNavigate();
+  const [image, setImage] = useState("/images/null-state.PNG");
+  const [imageData, setImageData] = useState("");
 
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -26,6 +28,15 @@ function Home() {
   
   const [error, setError] = useState(null);
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setImageData(file);
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setImage(reader.result);
+    };
+  };
   
   const getUserBusiness = async () => {
     try {
@@ -54,6 +65,7 @@ function Home() {
         funding_needed: funding,
         stake_offered: stake,
         valuation: valuation,
+        image:imageData
       };
 
       const response = await axios.post("http://127.0.0.1:8000/api/edit_business",data, {
@@ -132,11 +144,28 @@ function Home() {
       <div className="user-business felx column padding-10 ">
         <div className="user-business-title flex align padding-10">
           <h1>Business Overview</h1>
+
         </div>
         <div className="user-business-info flex column">
+        <div className="complete-profile-upload-image flex center gap-10 column  ">
+            <div className="image-uploaded">
+              <img src={image} alt="Upload your picture" />
+            </div>
+            <div>
+              <label for="file-upload" class="custom-file-upload">
+                <input
+                  id="file-upload"
+                  type="file"
+                  onChange={handleFileChange}
+                />
+                Upload File
+              </label>
+            </div>
+          </div>
           <div className="user-business-info-container flex between padding-10 ">
             <div className="flex half-w column gap-20">
               <div className="user-business-edit-info-input flex between center">
+              
               <h3>Business Name</h3>
                 <input
                   type="text"
