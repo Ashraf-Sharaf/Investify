@@ -191,6 +191,19 @@ function CompleteProfile() {
         </div>
       </div>
       <Footer />
+      {error && (
+        <div className="error-message flex center column gap-20">
+          {error}
+          <button
+            className="error-messge-button"
+            onClick={() => {
+              setError(null);
+            }}
+          >
+            Close
+          </button>
+        </div>
+      )}
     </div>
   );
 }
