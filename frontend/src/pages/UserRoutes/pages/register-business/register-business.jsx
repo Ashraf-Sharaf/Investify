@@ -36,16 +36,15 @@ function RegisterBusiness() {
 
   const registerBusiness = async () => {
     try {
-      const data = {
-        name: name,
-        industry: industry,
-        location:location,
-        description: description,
-        funding: funding,
-        stake:stake,
-        valuation: valuation
-          // data.append("image", imageData)
-      }
+      const data = new FormData();
+      data.append("name", name);
+      data.append("industry", industry);
+      data.append("location", location);
+      data.append("description", description);
+      data.append("funding_needed", funding);
+      data.append("stake_offered", stake);
+      data.append("valuation", valuation);
+      data.append("image", imageData);
 
       const res = await axios.post(
         "http://127.0.0.1:8000/api/add_business",
@@ -53,7 +52,7 @@ function RegisterBusiness() {
         {
           headers: {
             Authorization: "Bearer " + window.localStorage.getItem("token"),
-      
+            "Content-Type": "multipart/form-data",
           },
         }
       );
