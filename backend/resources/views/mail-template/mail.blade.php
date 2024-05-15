@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Hello Investor</h1>
-    <a href="http://localhost:3000/investor">Click here to join Investify</a>
+    <a href="http://localhost:3000/investor/complete-profile">Click here to join Investify</a>
 
     
 </body>

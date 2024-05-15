@@ -36,7 +36,7 @@ Route::post('edit_meeting',[MeetingController::class,'edit_meeting']);
 Route::post('join_meeting',[AttendeeController::class,'join_meeting']);
 Route::post('get_business',[BusinessController::class,'get_business']);
 Route::post('add_photo',[AuthController::class,'add_photo']);
-Route::post('invite_investor',[EmailController::class,'send_email']);
+
 
 Route::group(["middleware" => "entrepreneur.middleware"], function () {
 
@@ -55,6 +55,7 @@ Route::group(["middleware" => "admin.middleware"], function () {
     Route::post('create_event', [EventController::class, 'create_event']);
     Route::post('edit_event', [EventController::class, 'edit_event']);
     Route::delete('delete_event/{id}', [EventController::class, 'delete_event']);
+    Route::post('invite_investor',[EmailController::class,'send_email']);
 });
 
 
