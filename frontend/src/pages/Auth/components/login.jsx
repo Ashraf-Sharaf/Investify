@@ -24,7 +24,7 @@ function Login({ onToggle }) {
         } else if (res.data.user_role == "entrepreneur") {
           navigate("/user");
         } else if (res.data.user_role == "admin") {
-          // navigate("/admin");
+          navigate("/admin");
         }
       }
     } catch (error) {
