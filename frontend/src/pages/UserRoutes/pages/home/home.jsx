@@ -61,9 +61,9 @@ function Home() {
           Authorization: "Bearer " + window.localStorage.getItem("token"),
         },
       });
-      console.log(response)
+  =
       if (response.status == 200) {
-        setError(response.data.message);
+        setError("Edited Successfully");
       }else{
         setError("Error, try again later!");
       }
@@ -143,7 +143,7 @@ function Home() {
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
-                  // placeholder={mybusiness.name}
+                  placeholder={mybusiness.name}
                   required
                 ></input>
               </div>
@@ -154,7 +154,7 @@ function Home() {
                   onChange={(e) => {
                     setLocation(e.target.value);
                   }}
-                  // placeholder={mybusiness.location}
+                  placeholder={mybusiness.location}
                   required
                 ></input>
               </div>
@@ -165,7 +165,7 @@ function Home() {
                   onChange={(e) => {
                     setIndustry(e.target.value);
                   }}
-                  // placeholder={mybusiness.industry}
+                  placeholder={mybusiness.industry}
                   required
                 ></input>
               </div>
@@ -178,7 +178,7 @@ function Home() {
                   onChange={(e) => {
                     setFunding(e.target.value);
                   }}
-                  // placeholder={mybusiness.funding_needed+" $"}
+                  placeholder={mybusiness.funding_needed+" $"}
                   required
                 ></input>
               </div>
@@ -189,7 +189,7 @@ function Home() {
                   onChange={(e) => {
                     setStake(e.target.value);
                   }}
-                  // placeholder={mybusiness.stake_offered+" %"}
+                  placeholder={mybusiness.stake_offered+" %"}
                   required
                 ></input>
               </div>
@@ -200,7 +200,7 @@ function Home() {
                   onChange={(e) => {
                     setValuation(e.target.value);
                   }}
-                  // placeholder={mybusiness.valuation+" $"}
+                  placeholder={mybusiness.valuation+" $"}
                   required
                 ></input>
               </div>
@@ -213,7 +213,7 @@ function Home() {
               onChange={(e) => {
                 setDescription(e.target.value);
               }}
-              // placeholder={mybusiness.description}
+              placeholder={mybusiness.description}
               required
             ></textarea>
           </div>
