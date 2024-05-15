@@ -57,20 +57,20 @@ function Home() {
   const editBusiness = async () => {
     try {
 
-      const data = {
-        name: name,
-        industry: industry,
-        location: location,
-        description: description,
-        funding_needed: funding,
-        stake_offered: stake,
-        valuation: valuation,
-        image:imageData
-      };
+      const data = new FormData();
+      data.append("name", name);
+      data.append("industry", industry);
+      data.append("location", location);
+      data.append("description", description);
+      data.append("funding_needed", funding);
+      data.append("stake_offered", stake);
+      data.append("valuation", valuation);
+      data.append("image", imageData);
 
       const response = await axios.post("http://127.0.0.1:8000/api/edit_business",data, {
         headers: {
           Authorization: "Bearer " + window.localStorage.getItem("token"),
+          "Content-Type": "multipart/form-data",
         },
       });
   
@@ -83,7 +83,7 @@ function Home() {
       setError("Error, try again later!");
     }
   };
-  
+  console.log(mybusiness)
   
   const logout = () => {
     window.localStorage.setItem("token", null);
