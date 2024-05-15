@@ -38,17 +38,22 @@ function CompleteProfile() {
   const registerUser = async () => {
     try {
       if (password == confirmPassword) {
-        const data = {
-          first_name: firstname,
-          last_name: lastname,
-          email: email,
-          password: password,
-          role_id: 2,
-        };
+        const data = new FormData();
+        data.append("first_name", firstname);
+        data.append("last_name", lastname);
+        data.append("email", email);
+        data.append("password", password);
+        data.append("role_id", 2);
+        data.append("image", imageData);
 
         const res = await axios.post(
           "http://127.0.0.1:8000/api/register",
-          data
+          data,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
         );
         if (res.status !== 200) {
           setError("Error, try again later!");
