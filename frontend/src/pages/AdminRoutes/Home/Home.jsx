@@ -30,6 +30,11 @@ function Home() {
           },
         }
       );
+      if (res.status == 200) {
+        setError("Sent Successfully");
+      } else {
+        setError("Error while sending");
+      }
     } catch (error) {}
   };
 
@@ -61,8 +66,19 @@ function Home() {
       <div className="invite-investor-container padding-10 flex column gap-20">
         <h1>Invite Investor</h1>
         <div className="invite-investor-inputs flex gap-20 align">
-          <input placeholder="Investor Email"></input>
-          <button onClick={() => {sendEmail()}}>Send Invite</button>
+          <input
+            placeholder="Investor Email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          ></input>
+          <button
+            onClick={() => {
+              sendEmail();
+            }}
+          >
+            Send Invite
+          </button>
         </div>
       </div>
       {error && (
