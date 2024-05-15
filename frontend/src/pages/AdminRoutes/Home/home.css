@@ -1,3 +1,24 @@
 .admin{
     height: 100vh;
 }
+.invite-investor-container{
+   
+    width: 70%;
+}
+.invite-investor-inputs{
+  
+}
+.invite-investor-inputs input{
+    height: 30px;
+    width: 400px;
+    border-radius: 7px;
+    background-color: #bbbbbb;
+    padding:10px;
+}
+.invite-investor-inputs button{
+    height: 30px;
+    width: 100px;
+    border-radius: 7px;
+    background-color:  #084f09;
+    color: white;
+}
