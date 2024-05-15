@@ -35,10 +35,10 @@ function User() {
         <Route
           path="/"
           element={
-            hasBusiness ? <Navigate to="/user/home" /> : <RegisterBusiness />
+            hasBusiness ? <Home /> : <Navigate to="/user/register-business" />
           }
         />
-        <Route path="/home" element={<Home />} />
+        <Route path="/register-business" element={<RegisterBusiness />} />
       </Routes>
     </div>
   );
