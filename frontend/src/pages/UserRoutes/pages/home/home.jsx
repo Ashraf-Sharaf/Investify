@@ -61,7 +61,7 @@ function Home() {
           Authorization: "Bearer " + window.localStorage.getItem("token"),
         },
       });
-  =
+  
       if (response.status == 200) {
         setError("Edited Successfully");
       }else{
