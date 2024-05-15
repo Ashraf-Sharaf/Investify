@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Signup({ onToggle }) {
@@ -7,7 +8,8 @@ function Signup({ onToggle }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState(null); 
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const registerUser = async () => {
     try {
@@ -17,6 +19,7 @@ function Signup({ onToggle }) {
           last_name: lastname,
           email: email,
           password: password,
+          role_id: 3,
         };
 
         const res = await axios.post(
@@ -25,6 +28,8 @@ function Signup({ onToggle }) {
         );
         if (res.status !== 200) {
           setError("Error, try again later!");
+        }else{
+          navigate("/user");
         }
       } else {
         setError("Passwords do not match.");
@@ -47,20 +52,24 @@ function Signup({ onToggle }) {
       <div className="flex column center auth-section">
         <div className="flex column between center  auth-form">
           <h1>Sign Up</h1>
-          
-          <input type="email"
+
+          <input
+            type="email"
             className="auth-inputs"
             placeholder="First Name"
             onChange={(e) => {
               setFirstname(e.target.value);
-            }} required 
+            }}
+            required
           ></input>
-                    <input type="email"
+          <input
+            type="email"
             className="auth-inputs"
             placeholder="Last Name"
             onChange={(e) => {
               setLastname(e.target.value);
-            }} required 
+            }}
+            required
           ></input>
           <input
             className="auth-inputs"
@@ -93,11 +102,21 @@ function Signup({ onToggle }) {
           >
             Sign Up
           </button>
-
-          
         </div>
       </div>
-      {error && <div className="error-message flex center column gap-20">{error}<button className="error-messge-button" onClick={()=>{setError(null)}}>Close</button></div>}
+      {error && (
+        <div className="error-message flex center column gap-20">
+          {error}
+          <button
+            className="error-messge-button"
+            onClick={() => {
+              setError(null);
+            }}
+          >
+            Close
+          </button>
+        </div>
+      )}
     </div>
   );
 }
