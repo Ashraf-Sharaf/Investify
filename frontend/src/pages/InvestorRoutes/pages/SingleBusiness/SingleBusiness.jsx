@@ -2,17 +2,51 @@ import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import Footer from "../../../Footer/Footer";
 import "./SingleBusiness.css";
-import React, { useState } from "react";
-import {useNavigate,useParams} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Rating from "@mui/material/Rating";
+import axios from "axios";
 
-function SingleBuisness({name}) {
-  const navigate=useNavigate();
+function SingleBuisness() {
+  const navigate = useNavigate();
   const [popup, setPopup] = useState(false);
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
+  const [error, setError] = useState(null);
+  const [business, setBusiness] = useState([]);
 
   const { id } = useParams();
+
+  const getBusiness = async () => {
+    try {
+      const data = new FormData();
+      data.append("business_id", id);
+
+      const res = await axios.post(
+        "http://127.0.0.1:8000/api/get_business",
+        data,
+        {
+          headers: {
+            Authorization: "Bearer " + window.localStorage.getItem("token"),
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      if (res.status !== 200) {
+        setError("Error");
+      } else {
+        setBusiness(res.data.business);
+      }
+      
+    } catch (error) {
+      setError("Error, try again later!");
+    }
+  };
+
+
+  useEffect(() => {
+    getBusiness();
+  }, []);
 
 
   return (
@@ -69,10 +103,13 @@ function SingleBuisness({name}) {
           <div className="single-business-details flex column padding-10 gap-20">
             <div className="flex between">
               <h2>Business name</h2>
-              <CloseIcon className="close-icon" onClick={()=>navigate('/investor')} />
+              <CloseIcon
+                className="close-icon"
+                onClick={() => navigate("/investor")}
+              />
             </div>
             <h4>Beirut, Lebanon</h4>
-            <h4>{id}</h4>
+            <h4>{business.industry}</h4>
             <h4>Valuation : 100,000$</h4>
             <h4>Funding needed : 50,000$</h4>
             <h4>Stake offered : 45% of the company</h4>
