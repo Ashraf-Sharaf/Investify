@@ -28,7 +28,7 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
-        $role = Role::where('id', $user->id)->value('name');
+        $role = Role::where('id', $user->role_id)->value('name');
 
         
         return response()->json([
