@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/home/home";
 import RegisterBusiness from "./pages/register-business/register-business";
-import { useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 import axios from "axios";
 
 function User() {
@@ -9,16 +9,14 @@ function User() {
 
   const getUserBusiness = async () => {
     try {
-      const response = await axios.get(
-        "http://127.0.0.1:8000/api/my_business",
-        {
-          headers: {
-            Authorization: "Bearer " + window.localStorage.getItem("token"),
-          },
-        }
-      );
-      if (response.status === 200) {
+      const response = await axios.get("http://127.0.0.1:8000/api/my_business", {
+        headers: {
+          Authorization: "Bearer " + window.localStorage.getItem("token"),
+        },
+      });
+      if (response.data.status === 200) {
         setHasBusiness(true);
+    
       }
     } catch (error) {
       console.error("Error loading data");
@@ -29,16 +27,15 @@ function User() {
     getUserBusiness();
   }, []);
 
+
   return (
     <div>
       <Routes>
         <Route
           path="/"
-          element={
-            hasBusiness ? <Home /> : <Navigate to="/user/register-business" />
-          }
+          element={hasBusiness ? <Navigate to="/user/home" /> : <RegisterBusiness />}
         />
-        <Route path="/register-business" element={<RegisterBusiness />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </div>
   );
