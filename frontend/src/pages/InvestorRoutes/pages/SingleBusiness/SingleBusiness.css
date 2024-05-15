@@ -54,6 +54,7 @@
   border-radius: 20px;
   height: 250px;
   width: 300px;
+  z-index: 1;
 }
 .popup-date,.popup-time{
   height: 40px;
