@@ -83,6 +83,7 @@ function SingleBuisness() {
               />
               <input type="date" className="popup-date" />
               <input type="time" className="popup-time" />
+              <input type="text" placeholder="meeting link" className="popup-link"/>
               <div className="flex around">
                 <button
                   className="popup-book-button"

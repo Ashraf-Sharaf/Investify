@@ -88,6 +88,11 @@
   bottom: 0;
   right: 0;
   margin-bottom: 10px;
-  
-  
+}
+.popup-link{
+  height: 40px;
+  background-color: #084f09;
+  border-radius: 10px;
+  padding:10px;
+  color: white;
 }
