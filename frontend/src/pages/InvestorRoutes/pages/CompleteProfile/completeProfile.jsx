@@ -44,7 +44,7 @@ function CompleteProfile() {
         data.append("email", email);
         data.append("password", password);
         data.append("role_id", 2);
-        data.append("image", imageData);
+     
 
         const res = await axios.post(
           "http://127.0.0.1:8000/api/register",

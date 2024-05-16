@@ -93,7 +93,7 @@ function SingleBuisness() {
           <div className="single-business-img">
             <img
               className="single-business-img"
-              src="/images/Investify.png"
+              src={"http://127.0.0.1:8000/business_images/" + business.image}
               alt="logo"
             ></img>
           </div>
