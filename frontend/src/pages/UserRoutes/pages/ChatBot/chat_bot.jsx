@@ -22,8 +22,8 @@ function ChatBot(){
       </div>
       <div className="user-sidebar-navigations flex column gap-10 ">
         <div
-          className="flex gap-10 user-sidebar-navigation align page-shown"
-          onClick={() => {}}
+          className="flex gap-10 user-sidebar-navigation align "
+          onClick={() => {navigate('/user/home')}}
         >
           <HomeIcon />
           <h3>Home</h3>
@@ -36,7 +36,7 @@ function ChatBot(){
           <h3>Reviews</h3>
         </div>
         <div
-          className="flex gap-10 user-sidebar-navigation align"
+          className="flex gap-10 user-sidebar-navigation align page-shown"
           onClick={() => {}}
         >
           <ComputerIcon />
