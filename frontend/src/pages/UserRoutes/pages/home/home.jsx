@@ -48,12 +48,12 @@ function Home() {
       if (response.status === 200) {
         setMybusiness(response.data.business);
         setImage("http://127.0.0.1:8000/business_images/" + mybusiness.image);
+
       }
     } catch (error) {
       setError("Error loading data");
     }
   };
-
 
   const editBusiness = async () => {
     try {
@@ -77,6 +77,8 @@ function Home() {
   
       if (response.status == 200) {
         setError("Edited Successfully");
+    
+
       }else{
         setError("Error, try again later!");
       }
@@ -84,7 +86,7 @@ function Home() {
       setError("Error, try again later!");
     }
   };
-  console.log(mybusiness)
+
   
   const logout = () => {
     window.localStorage.setItem("token", null);
