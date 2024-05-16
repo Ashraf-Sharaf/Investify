@@ -10,7 +10,7 @@ function LeftBusinesCard({ business }) {
   return (
     <div className="investor-business-card flex gap-20 ">
       <div className="investor-business-img">
-        <img src="/images/Investify.png" alt="No image" />
+        <img src={"http://127.0.0.1:8000/business_images/" + business.image} alt="No image" />
       </div>
       <div className="investor-business-description padding-10 flex column gap-20">
         <h1>{name}</h1>
