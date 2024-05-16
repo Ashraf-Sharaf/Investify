@@ -1,4 +1,5 @@
 import "../../sidebar.css";
+import "./chatbot.css";
 import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import ComputerIcon from "@mui/icons-material/Computer";
