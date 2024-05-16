@@ -27,7 +27,7 @@ function RightCard({ business }) {
         </div>
       </div>
       <div className="investor-business-img-right">
-        <img src="/images/Investify.png" alt="No image" />
+        <img src={"http://127.0.0.1:8000/business_images/" + business.image} alt="No image" />
       </div>
     </div>
   );
