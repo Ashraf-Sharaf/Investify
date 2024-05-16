@@ -107,13 +107,20 @@ class BusinessController extends Controller
         $data = $request->all();
 
         $business = Business::findOrFail($businessID);
+  
 
         foreach ($data as $attribute => $value) {
             if (!empty($value)) {
                 $business->$attribute = $value;
             }
         }
-
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move(public_path('/business_images/'), $filename);
+            $business->image=$filename;
+        }
 
         $business->save();
 
