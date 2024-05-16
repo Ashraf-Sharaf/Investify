@@ -6,6 +6,18 @@ import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import LogoutIcon from "@mui/icons-material/Logout";
 
+import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
+import {
+  MainContainer,
+  ChatContainer,
+  MessageList,
+  Message,
+  MessageInput,
+  TypingIndicator,
+} from "@chatscope/chat-ui-kit-react";
+import { useState } from "react";
+
+
 function ChatBot(){
 
     const navigate = useNavigate();
@@ -14,6 +26,8 @@ function ChatBot(){
         window.localStorage.setItem("token", null);
         navigate("/");
       };
+
+
 
     return <div className="flex">
     <div className="user-sidebar flex column padding-20 gap-20">
