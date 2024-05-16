@@ -60,7 +60,22 @@ function ChatBot(){
           }
           return { role: role, content: messageObject.message };
         });
-      }
+      
+
+      const systemMessage = {
+        role: "system",
+        content:
+          "Hello, ChatGPT. For this session, please only answer questions related to investment. This includes topics like stocks, bonds, mutual funds, real estate, investment strategies, risk management, market trends, portfolio diversification, retirement planning, and any other investment-related queries. Please ignore any questions that are not related to investment."
+      };
+  
+      const apiRequestBody = {
+        model: "gpt-3.5-turbo",
+        messages: [systemMessage, ...apiMessages],
+      };
+
+      
+    }
+
     return <div className="flex">
     <div className="user-sidebar flex column padding-20 gap-20">
       <div className="landing-nav-logo flex center bottom-border padding-10">
