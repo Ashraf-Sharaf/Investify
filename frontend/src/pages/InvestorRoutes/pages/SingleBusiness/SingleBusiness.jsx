@@ -14,6 +14,9 @@ function SingleBuisness() {
   const [review, setReview] = useState("");
   const [error, setError] = useState(null);
   const [business, setBusiness] = useState([]);
+  const [ownerFirst, setOwnerFirst] = useState("");
+  const [ownerLast, setOwnerLast] = useState("");
+
 
   const { id } = useParams();
 
@@ -41,6 +44,9 @@ function SingleBuisness() {
         setError("Error");
       } else {
         setBusiness(res.data.business);
+        setOwnerFirst(res.data.owner_first_name);
+        setOwnerLast(res.data.owner_last_name);
+      
       }
     } catch (error) {
       setError("Error, try again later!");
@@ -105,12 +111,13 @@ function SingleBuisness() {
           </div>
           <div className="single-business-details flex column padding-10 gap-20">
             <div className="flex between">
-              <h2>{business.name}e</h2>
+              <h2>{business.name}</h2>
               <CloseIcon
                 className="close-icon"
                 onClick={() => navigate("/investor")}
               />
             </div>
+            <h4>Owned by:{ownerFirst+" "+ownerLast}</h4>
             <h4>{business.location}</h4>
             <h4>{business.industry}</h4>
             <h4>Valuation : {business.valuation}$</h4>
