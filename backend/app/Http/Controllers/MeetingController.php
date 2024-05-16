@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Meeting;
+use App\Models\Attendee;
+use App\Models\Participant;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class MeetingController extends Controller
 {
     public function create_meeting(Request $request)
     {
+        $userID=Auth::id();
 
         $request->validate([
             'date' => 'required|date',
@@ -22,6 +26,15 @@ class MeetingController extends Controller
             'link' => $request->link
         ]);
 
+        Attendee::create([
+            'user_id'=>$userID,
+            'meeting_id'=>$meeting->id
+        ]);
+
+        Attendee::create([
+            'user_id'=>$request->user_id,
+            'meeting_id'=>$meeting->id
+        ]);
 
         return response()->json([
             'status' => 200,

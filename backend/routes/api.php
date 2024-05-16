@@ -31,7 +31,6 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout']);
 
-Route::post('create_meeting',[MeetingController::class,'create_meeting']);
 Route::post('edit_meeting',[MeetingController::class,'edit_meeting']);
 Route::post('join_meeting',[AttendeeController::class,'join_meeting']);
 Route::post('get_business',[BusinessController::class,'get_business']);
@@ -66,4 +65,7 @@ Route::group(["middleware" => "investor.middleware"], function () {
     Route::post('remove_favorite', [FavoriteController::class, 'remove_favorite']);
 
     Route::post('add_review', [ReviewController::class, 'add_review']);
+
+    Route::post('create_meeting',[MeetingController::class,'create_meeting']);
+
 });
