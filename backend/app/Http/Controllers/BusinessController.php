@@ -73,8 +73,8 @@ class BusinessController extends Controller
 
     public function my_business()
     {
-        $entrepreneurID = Auth::id();
-
+        $entrepreneur = Auth::user();
+        $entrepreneurID=$entrepreneur->id;
         $business = Business::where('entrepreneur_id', $entrepreneurID)->first();
 
         if (!$business) {
@@ -87,7 +87,9 @@ class BusinessController extends Controller
         return response()->json([
             'status' => 200,
             'message' => 'Business retrieved successfully',
-            'business' => $business
+            'business' => $business,
+            'owner_first_name'=>$entrepreneur->first_name,
+            'owner_last_name' =>$entrepreneur->last_name
         ]);
     }
 
