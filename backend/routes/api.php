@@ -36,6 +36,7 @@ Route::post('join_meeting',[AttendeeController::class,'join_meeting']);
 Route::post('get_business',[BusinessController::class,'get_business']);
 Route::post('add_photo',[AuthController::class,'add_photo']);
 
+Route::get('get_meetings',[MeetingController::class,'get_meetings']);
 
 Route::group(["middleware" => "entrepreneur.middleware"], function () {
 

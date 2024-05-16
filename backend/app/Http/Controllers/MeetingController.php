@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Meeting;
 use App\Models\Attendee;
-use App\Models\Participant;
+use App\Models\User;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -67,4 +68,23 @@ class MeetingController extends Controller
         ]);
 
     }
+
+    public function get_meetings()
+    {
+        
+        $authID = Auth::id();
+        $meetingIDs = Attendee::where('user_id', $authID)->pluck('meeting_id');
+        $meetings = Meeting::whereIn('id', $meetingIDs)->get();
+        $usersID = Attendee::whereIn('meeting_id', $meetingIDs)
+        ->where('user_id', '!=', $authID)
+        ->pluck('user_id');
+
+        $user=User::whereIn('id',$usersID)->get();
+        return response()->json([
+            'status' => 200,
+            'meetings' => $meetings,
+            'other_participant'=>$user
+        ]);
+    }
+    
 }
