@@ -3,6 +3,7 @@ import Home from "./pages/home/home";
 import RegisterBusiness from "./pages/register-business/register-business";
 import { useState,useEffect } from "react";
 import axios from "axios";
+import ChatBot from "./pages/ChatBot/chat_bot";
 
 function User() {
   const [hasBusiness, setHasBusiness] = useState(false);
@@ -36,6 +37,7 @@ function User() {
           element={hasBusiness ? <Navigate to="/user/home" /> : <RegisterBusiness />}
         />
         <Route path="/home" element={<Home />} />
+        <Route path="/chat_bot" element={<ChatBot />} />
       </Routes>
     </div>
   );
