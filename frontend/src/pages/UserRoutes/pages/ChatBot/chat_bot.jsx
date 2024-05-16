@@ -73,7 +73,28 @@ function ChatBot(){
         messages: [systemMessage, ...apiMessages],
       };
 
-      
+      await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + API_key,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(apiRequestBody),
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((data) => {
+        setMessages([
+          ...chatMessages,
+          {
+            message: data.choices[0].message.content,
+            sender: "ChatGPT",
+            direction: "ingoing",
+          },
+        ]);
+        setTyping(false);
+      });
     }
 
     return <div className="flex">
