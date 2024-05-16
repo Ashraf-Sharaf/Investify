@@ -49,6 +49,18 @@ function ChatBot(){
         await processMessagetoChatGPT(newMessages);
       };
 
+      async function processMessagetoChatGPT(chatMessages) {
+        let apiMessages = chatMessages.map((messageObject) => {
+          let role = "";
+    
+          if (messageObject.sender === "ChatGPT") {
+            role = "assistant";
+          } else {
+            role = "user";
+          }
+          return { role: role, content: messageObject.message };
+        });
+      }
     return <div className="flex">
     <div className="user-sidebar flex column padding-20 gap-20">
       <div className="landing-nav-logo flex center bottom-border padding-10">
