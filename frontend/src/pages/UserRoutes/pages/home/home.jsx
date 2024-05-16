@@ -47,6 +47,7 @@ function Home() {
       });
       if (response.status === 200) {
         setMybusiness(response.data.business);
+        setImage("http://127.0.0.1:8000/business_images/" + mybusiness.image);
 
       }
     } catch (error) {
@@ -76,6 +77,7 @@ function Home() {
   
       if (response.status == 200) {
         setError("Edited Successfully");
+        setImage("http://127.0.0.1:8000/business_images/" + mybusiness.image);
        
 
       }else{
@@ -94,7 +96,7 @@ function Home() {
 
   useEffect(() => {
     getUserBusiness();
-    setImage("http://127.0.0.1:8000/business_images/" + mybusiness.image);
+    
   }, []);
 
   
@@ -154,7 +156,7 @@ function Home() {
         <div className="user-business-info flex column">
         <div className="complete-profile-upload-image flex center gap-10 column  ">
             <div className="image-uploaded">
-              <img src={image} alt="Upload picture" />
+              <img src={"http://127.0.0.1:8000/business_images/" + mybusiness.image} alt="Upload picture" />
             </div>
             <div>
               <label for="file-upload" class="custom-file-upload">
