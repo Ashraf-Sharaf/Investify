@@ -123,7 +123,7 @@ function Home() {
           </div>
           <div
             className="flex gap-10 user-sidebar-navigation align"
-            onClick={() => {}}
+            onClick={() => {navigate('/user/chat_bot')}}
           >
             <ComputerIcon />
             <h3>AI</h3>
