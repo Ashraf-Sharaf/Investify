@@ -42,7 +42,12 @@ function ChatBot(){
           sender: "user",
           direction: "outgoing",
         };
+        const newMessages = [...messages, newMessage];
 
+        setMessages(newMessages);
+        setTyping(true);
+        await processMessagetoChatGPT(newMessages);
+      };
 
     return <div className="flex">
     <div className="user-sidebar flex column padding-20 gap-20">
@@ -108,5 +113,5 @@ function ChatBot(){
       </div>
     </div>
 }
-}
+
 export default ChatBot;
