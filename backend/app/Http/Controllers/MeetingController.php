@@ -13,13 +13,13 @@ class MeetingController extends Controller
         $request->validate([
             'date' => 'required|date',
             'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i'
+            'link' => 'required|string'
         ]);
 
         $meeting = Meeting::create([
             'date' => $request->date,
             'start_time' => $request->start_time,
-            'end_time' => $request->end_time
+            'link' => $request->link
         ]);
 
 
@@ -35,7 +35,7 @@ class MeetingController extends Controller
         $data = $request->validate([
             'date' => 'date',
             'start_time' => 'date_format:H:i',
-            'end_time' => 'date_format:H:i'
+            'link' => 'string'
         ]);
 
         $meetingID=$request->meeting_id;
