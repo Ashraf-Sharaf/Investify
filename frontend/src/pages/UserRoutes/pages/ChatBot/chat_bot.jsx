@@ -16,6 +16,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 import { useState } from "react";
+const API_key = "sk-proj-SLWAseI7ZzAJQqQ31Mb2T3BlbkFJ1aAchb3BJ6fV18HMzLOY";
 
 
 function ChatBot(){
@@ -74,7 +75,23 @@ function ChatBot(){
         />
       </div>
     </div>
+    <div className="chatbot ">
+        <MainContainer>
+          <ChatContainer>
+            <MessageList
+              typingIndicator={
+                typing ? <TypingIndicator content="ChatGPT is typing" /> : null
+              }
+            >
+              {messages.map((message, i) => {
+                return <Message key={i} model={message} />;
+              })}
+            </MessageList>
 
+            <MessageInput placeholder="type message here" onSend={handleSend} />
+          </ChatContainer>
+        </MainContainer>
+      </div>
     </div>
 }
 export default ChatBot;
