@@ -17,6 +17,11 @@ function SingleBuisness() {
 
   const { id } = useParams();
 
+  const logout = () => {
+    window.localStorage.setItem("token", null);
+    navigate("/");
+  };
+  
   const getBusiness = async () => {
     try {
       const data = new FormData();
@@ -63,7 +68,7 @@ function SingleBuisness() {
           </div>
         </div>
         <div className="flex gap-10">
-          <button className="logout-nav-button">Log out</button>
+          <button className="logout-nav-button" onClick={()=>{logout()}}>Logout</button>
         </div>
       </div>
       <div className="flex center padding-20">
