@@ -27,7 +27,21 @@ function ChatBot(){
         window.localStorage.setItem("token", null);
         navigate("/");
       };
-
+      const [typing, setTyping] = useState(false);
+      const [messages, setMessages] = useState([
+        {
+          message: "Hello, I am ChatGPT",
+          sender: "ChatGPT",
+          direction: "ingoing",
+        },
+      ]);
+    
+      const handleSend = async (message) => {
+        const newMessage = {
+          message: message,
+          sender: "user",
+          direction: "outgoing",
+        };
 
 
     return <div className="flex">
@@ -93,5 +107,6 @@ function ChatBot(){
         </MainContainer>
       </div>
     </div>
+}
 }
 export default ChatBot;
