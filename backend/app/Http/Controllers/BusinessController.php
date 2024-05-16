@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Business;
+use App\Models\User;
 
 class BusinessController extends Controller
 {
@@ -144,11 +145,13 @@ class BusinessController extends Controller
                 'message' => "No Business Found"
             ]);
         } else {
-
+        $entrepreneur=User::where('id',$business->entrepreneur_id)->first();
             return response()->json([
                 'status' => 200,
                 'message' => 'Business retrieved successfully',
-                'business' => $business
+                'business' => $business,
+                'owner_first_name'=>$entrepreneur->first_name,
+                'owner_last_name' =>$entrepreneur->last_name
 
             ]);
         }
