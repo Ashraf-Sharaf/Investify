@@ -9,7 +9,7 @@ class Meeting extends Model
 {
     use HasFactory;
 
-    protected $fillable=['date','start_time','end_time'];
+    protected $fillable=['date','start_time','link'];
 
     public function attendees()
     {
