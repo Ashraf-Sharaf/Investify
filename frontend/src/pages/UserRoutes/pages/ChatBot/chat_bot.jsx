@@ -66,7 +66,7 @@ function ChatBot(){
       const systemMessage = {
         role: "system",
         content:
-          "Hello, ChatGPT. For this session, please only answer questions related to investment. This includes topics like stocks, bonds, mutual funds, real estate, investment strategies, risk management, market trends, portfolio diversification, retirement planning, and any other investment-related queries. Please ignore any questions that are not related to investment."
+        "Hello, ChatGPT. For this session, please only answer questions related to investment. This includes topics like stocks, bonds, mutual funds, real estate, investment strategies, risk management, market trends and any other investment-related queries.And play the role of an expert while giving tips to make startups attract more investments. Please ignore any questions that are not related to investment."
       };
   
       const apiRequestBody = {
