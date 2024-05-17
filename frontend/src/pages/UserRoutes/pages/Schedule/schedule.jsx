@@ -1,3 +1,12 @@
+import "../../sidebar.css";
+import "./schedule.css";
+import { useNavigate } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
+import ComputerIcon from "@mui/icons-material/Computer";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
+import ReviewsIcon from "@mui/icons-material/Reviews";
+import LogoutIcon from "@mui/icons-material/Logout";
+
 function Schedule() {
   return (
     <div className="flex">
