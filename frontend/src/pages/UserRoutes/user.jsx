@@ -4,6 +4,7 @@ import RegisterBusiness from "./pages/register-business/register-business";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import ChatBot from "./pages/ChatBot/chat_bot";
+import Schedule from "./pages/Schedule/schedule";
 
 function User() {
   const [hasBusiness, setHasBusiness] = useState(false);
@@ -38,6 +39,8 @@ function User() {
         />
         <Route path="/home" element={<Home />} />
         <Route path="/chat_bot" element={<ChatBot />} />
+        <Route path="/schedule" element={<Schedule />} />
+
       </Routes>
     </div>
   );
