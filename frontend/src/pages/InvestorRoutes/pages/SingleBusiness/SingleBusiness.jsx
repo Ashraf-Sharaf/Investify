@@ -104,7 +104,7 @@ function SingleBuisness() {
               navigate("/investor/video");
             }}
           >
-            Meetings
+            Video Calls
           </button>
           <button
             className="logout-nav-button"

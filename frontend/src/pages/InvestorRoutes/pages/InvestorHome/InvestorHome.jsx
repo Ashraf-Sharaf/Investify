@@ -43,7 +43,7 @@ function Home() {
         </div>
 
         <div className="flex gap-10">
-        <button className="meeting-button" onClick={()=>{navigate('/investor/video')}}>Meetings</button>
+        <button className="meeting-button" onClick={()=>{navigate('/investor/video')}}>Video Calls</button>
           <button className="logout-nav-button" onClick={()=>{logout()}}>Logout</button>
         </div>
       </div>
