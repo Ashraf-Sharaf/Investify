@@ -1,26 +1,50 @@
 import "../../sidebar.css";
 import "./schedule.css";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import ComputerIcon from "@mui/icons-material/Computer";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import LogoutIcon from "@mui/icons-material/Logout";
-import VideocamIcon from '@mui/icons-material/Videocam';
+import VideocamIcon from "@mui/icons-material/Videocam";
+import { useState, useEffect } from "react";
+
 function Schedule() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const logout = () => {
-        window.localStorage.setItem("token", null);
-        navigate('/')
+  const [meetings, setMeetings] = useState([]);
+  const [participants, setParticipants] = useState([]);
+
+  const [error, setError] = useState(null);
+
+  const getMeetings = async () => {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:8000/api/get_meetings",
+        {
+          headers: {
+            Authorization: "Bearer " + window.localStorage.getItem("token"),
+          },
+        }
+      );
+      if (response.status === 200) {
+        setMeetings(response.data.meetings);
+        setParticipants(response.data.other_participant);
+      }
+    } catch (error) {
+      setError("Error loading data");
     }
-    const data = [
-        { col1: 'Row 1 Col 1', col2: 'Row 1 Col 2', col3: 'Row 1 Col 3', col4: 'Row 1 Col 4' },
-        { col1: 'Row 2 Col 1', col2: 'Row 2 Col 2', col3: 'Row 2 Col 3', col4: 'Row 2 Col 4' },
-        { col1: 'Row 3 Col 1', col2: 'Row 3 Col 2', col3: 'Row 3 Col 3', col4: 'Row 3 Col 4' },
-      ];
-    
+  };
 
+  useEffect(() => {
+    getMeetings();
+  }, []);
+
+  const logout = () => {
+    window.localStorage.setItem("token", null);
+    navigate("/");
+  };
   return (
     <div className="flex">
       <div className="user-sidebar flex column padding-20 gap-20">
@@ -30,7 +54,9 @@ function Schedule() {
         <div className="user-sidebar-navigations flex column gap-10 ">
           <div
             className="flex gap-10 user-sidebar-navigation align "
-            onClick={() => {navigate('/user/home')}}
+            onClick={() => {
+              navigate("/user/home");
+            }}
           >
             <HomeIcon />
             <h3>Home</h3>
@@ -60,7 +86,9 @@ function Schedule() {
           </div>
           <div
             className="flex gap-10 user-sidebar-navigation align "
-            onClick={() => {navigate('/user/video')}}
+            onClick={() => {
+              navigate("/user/video");
+            }}
           >
             <VideocamIcon />
             <h3>Video Chat</h3>
@@ -76,27 +104,32 @@ function Schedule() {
           />
         </div>
       </div>
-      <div className="schedule-container padding-10 ">    
-      <table>
-      <thead>
-        <tr>
-          <th>Investor Name</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Meeting Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, index) => (
-          <tr key={index}>
-            <td>{row.col1}</td>
-            <td>{row.col2}</td>
-            <td>{row.col3}</td>
-            <td>{row.col4}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table></div>
+      <div className="schedule-container padding-10 ">
+        <table>
+          <thead>
+            <tr>
+              <th>Investor Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Meeting Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            {meetings.map((meeting, index) => (
+              <tr key={index}>
+                {participants.map((participant, index) => (
+                  <td>
+                    {participant.first_name + " " + participant.last_name}
+                  </td>
+                ))}
+                <td>{meeting.date}</td>
+                <td>{meeting.start_time}</td>
+                <td>{meeting.link}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
