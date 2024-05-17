@@ -33,7 +33,7 @@ function Signup({ onToggle }) {
           navigate("/user");
         }
       } else {
-        setError("Passwords do not match.");
+        setError("Passwords don't match.");
       }
     } catch (error) {
       setError("Error, try again later!");
