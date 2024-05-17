@@ -63,17 +63,9 @@ function SingleBuisness() {
         <div className="landing-nav-logo ">
           <img className="logo " src="/images/Investify.png" alt="logo"></img>
         </div>
-        <div className="search flex  center">
-          <input
-            type="text"
-            placeholder="Search"
-            className="search-input padding-20"
-          ></input>
-          <div className="search-icon flex center">
-            <SearchIcon onClick={() => {}} />
-          </div>
-        </div>
+      
         <div className="flex gap-10">
+          <button className="meeting-button" onClick={()=>{navigate('/investor/video')}}>Meetings</button>
           <button className="logout-nav-button" onClick={()=>{logout()}}>Logout</button>
         </div>
       </div>
