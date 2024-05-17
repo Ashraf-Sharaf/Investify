@@ -4,9 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const data = [
-  { name: "user one", review: "Love how this platform is good" },
-  { name: "user two", review: "Love how this platform is good" },
-  { name: "user three", review: "Love how this platform is good" },
+  { name: "Alice Johnson", review: "Love how this platform is good" },
+  { name: "Bob Smith", review: "It has great features" },
+  { name: "Charlie Brown", review: "Very user-friendly" },
 ];
 function Stories() {
   const settings = {
