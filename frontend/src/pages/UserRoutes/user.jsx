@@ -5,6 +5,7 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import ChatBot from "./pages/ChatBot/chat_bot";
 import Schedule from "./pages/Schedule/schedule";
+import Video from "../Video/video";
 
 function User() {
   const [hasBusiness, setHasBusiness] = useState(false);
@@ -40,6 +41,7 @@ function User() {
         <Route path="/home" element={<Home />} />
         <Route path="/chat_bot" element={<ChatBot />} />
         <Route path="/schedule" element={<Schedule />} />
+        <Route path="/video" element={<Video/>} />
 
       </Routes>
     </div>
