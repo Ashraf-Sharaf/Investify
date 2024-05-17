@@ -96,3 +96,13 @@
   padding:10px;
   color: white;
 }
+.meeting-button{
+  height: 50px;
+  width: 100px;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color:#084f09;
+  color: white;
+  cursor: pointer;
+}
