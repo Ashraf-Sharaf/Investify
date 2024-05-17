@@ -2,7 +2,6 @@ import "./InvestorHome.css";
 import React, { useState, useEffect } from "react";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
-import SearchIcon from "@mui/icons-material/Search";
 import LeftCard from "./components/left-card";
 import RightCard from "./components/right-card";
 import Footer from "../../../Footer/Footer";
@@ -42,17 +41,9 @@ function Home() {
         <div className="landing-nav-logo ">
           <img className="logo " src="/images/Investify.png" alt="logo"></img>
         </div>
-        <div className="search flex  center">
-          <input
-            type="text"
-            placeholder="Search"
-            className="search-input padding-20"
-          ></input>
-          <div className="search-icon flex center">
-            <SearchIcon onClick={() => {}} />
-          </div>
-        </div>
+
         <div className="flex gap-10">
+        <button className="meeting-button" onClick={()=>{navigate('/investor/video')}}>Meetings</button>
           <button className="logout-nav-button" onClick={()=>{logout()}}>Logout</button>
         </div>
       </div>
