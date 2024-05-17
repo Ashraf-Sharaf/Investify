@@ -9,6 +9,7 @@ import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useState, useEffect } from "react";
+import VideocamIcon from '@mui/icons-material/Videocam';
 
 function Home() {
   
@@ -134,6 +135,13 @@ function Home() {
           >
             <EventAvailableIcon />
             <h3>Schedule</h3>
+          </div>
+          <div
+            className="flex gap-10 user-sidebar-navigation align "
+            onClick={() => {navigate('/user/video')}}
+          >
+            <VideocamIcon />
+            <h3>Video Chat</h3>
           </div>
         </div>
         <div className="user-sidebar-logout flex between align">

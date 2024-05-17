@@ -6,6 +6,7 @@ import ComputerIcon from "@mui/icons-material/Computer";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import LogoutIcon from "@mui/icons-material/Logout";
+import VideocamIcon from '@mui/icons-material/Videocam';
 
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
@@ -132,6 +133,13 @@ function ChatBot(){
           <EventAvailableIcon />
           <h3>Schedule</h3>
         </div>
+        <div
+            className="flex gap-10 user-sidebar-navigation align "
+            onClick={() => {navigate('/user/video')}}
+          >
+            <VideocamIcon />
+            <h3>Video Chat</h3>
+          </div>
       </div>
       <div className="user-sidebar-logout flex between align">
         <h3>Logout</h3>
