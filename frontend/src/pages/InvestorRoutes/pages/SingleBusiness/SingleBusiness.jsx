@@ -17,6 +17,9 @@ function SingleBuisness() {
   const [ownerFirst, setOwnerFirst] = useState("");
   const [ownerLast, setOwnerLast] = useState("");
 
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [link, setLink] = useState("");
 
   const { id } = useParams();
 
@@ -79,9 +82,9 @@ function SingleBuisness() {
                   setPopup(false);
                 }}
               />
-              <input type="date" className="popup-date" />
-              <input type="time" className="popup-time" />
-              <input type="text" placeholder="meeting link" className="popup-link"/>
+              <input type="date" className="popup-date" onChange={(e)=>{setDate(e.target.value)}}/>
+              <input type="time" className="popup-time" onChange={(e)=>{setTime(e.target.value)}}/>
+              <input type="text" placeholder="meeting link" className="popup-link" onChange={(e)=>{setLink(e.target.value)}}/>
               <div className="flex around">
                 <button
                   className="popup-book-button"
