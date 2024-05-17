@@ -29,7 +29,7 @@ function Schedule() {
         <div className="user-sidebar-navigations flex column gap-10 ">
           <div
             className="flex gap-10 user-sidebar-navigation align "
-            onClick={() => {}}
+            onClick={() => {navigate('/user/home')}}
           >
             <HomeIcon />
             <h3>Home</h3>

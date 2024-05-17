@@ -127,7 +127,7 @@ function ChatBot(){
         </div>
         <div
           className="flex gap-10 user-sidebar-navigation align"
-          onClick={() => {navigate('/user/schudle')}}
+          onClick={() => {navigate('/user/schedule')}}
         >
           <EventAvailableIcon />
           <h3>Schedule</h3>
