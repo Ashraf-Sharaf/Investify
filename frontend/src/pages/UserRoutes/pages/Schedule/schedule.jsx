@@ -8,6 +8,12 @@ import ReviewsIcon from "@mui/icons-material/Reviews";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 function Schedule() {
+    const navigate = useNavigate();
+
+    const logout = () => {
+        window.localStorage.setItem("token", null);
+    }
+    
   return (
     <div className="flex">
       <div className="user-sidebar flex column padding-20 gap-20">
