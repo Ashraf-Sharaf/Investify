@@ -58,6 +58,42 @@ function SingleBuisness() {
       setError("Error, try again later!");
     }
   };
+
+  const addReview = async () => {
+    try {
+      const data = new FormData();
+      data.append("rating", rating);
+      data.append("description", review);
+      data.append("business_id", id);
+
+      const res = await axios.post(
+        "http://127.0.0.1:8000/api/add_review",
+        data,
+        {
+          headers: {
+            Authorization: "Bearer " + window.localStorage.getItem("token"),
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      if (res.status !== 200) {
+        setError("Error, Check your inputs");
+      } else {
+        setError("Added Successfully");
+      }
+    } catch (error) {
+      setError("Error, try again later!");
+    }
+  };
+
+
+
+
+
+
+
+
+
   const getBusiness = async () => {
     try {
       const data = new FormData();
@@ -202,7 +238,7 @@ function SingleBuisness() {
                     setReview(event.target.value);
                   }}
                 ></input>
-                <button className="review-button">Send</button>
+                <button className="review-button" onClick={()=>{addReview()}}>Send</button>
               </div>
               <div className="flex center gap-20">
                 <button
