@@ -130,7 +130,7 @@ function Home() {
           </div>
           <div
             className="flex gap-10 user-sidebar-navigation align"
-            onClick={() => {}}
+            onClick={() => {navigate('/user/schedule')}}
           >
             <EventAvailableIcon />
             <h3>Schedule</h3>
