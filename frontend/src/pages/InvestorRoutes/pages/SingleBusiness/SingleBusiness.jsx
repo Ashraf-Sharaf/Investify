@@ -12,10 +12,12 @@ function SingleBuisness() {
   const [popup, setPopup] = useState(false);
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState("");
-  const [error, setError] = useState(null);
+
   const [business, setBusiness] = useState([]);
   const [ownerFirst, setOwnerFirst] = useState("");
   const [ownerLast, setOwnerLast] = useState("");
+  const [ownerID, setOwnerID] = useState("");
+  const [error, setError] = useState(null);
 
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -27,7 +29,35 @@ function SingleBuisness() {
     window.localStorage.setItem("token", null);
     navigate("/");
   };
-  
+
+  const bookMeeting = async () => {
+    try {
+      const data = new FormData();
+      data.append("date", date);
+      data.append("start_time", time);
+      data.append("link", link);
+      data.append("user_id", ownerID);
+
+      const res = await axios.post(
+        "http://127.0.0.1:8000/api/create_meeting",
+        data,
+        {
+          headers: {
+            Authorization: "Bearer " + window.localStorage.getItem("token"),
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      if (res.status !== 200) {
+        setError("Error, Check your inputs");
+      } else {
+        setPopup(false);
+        setError("Booked Successfully");
+      }
+    } catch (error) {
+      setError("Error, try again later!");
+    }
+  };
   const getBusiness = async () => {
     try {
       const data = new FormData();
@@ -49,7 +79,7 @@ function SingleBuisness() {
         setBusiness(res.data.business);
         setOwnerFirst(res.data.owner_first_name);
         setOwnerLast(res.data.owner_last_name);
-      
+        setOwnerID(res.data.business.entrepreneur_id);
       }
     } catch (error) {
       setError("Error, try again later!");
@@ -66,10 +96,24 @@ function SingleBuisness() {
         <div className="landing-nav-logo ">
           <img className="logo " src="/images/Investify.png" alt="logo"></img>
         </div>
-      
+
         <div className="flex gap-10">
-          <button className="meeting-button" onClick={()=>{navigate('/investor/video')}}>Meetings</button>
-          <button className="logout-nav-button" onClick={()=>{logout()}}>Logout</button>
+          <button
+            className="meeting-button"
+            onClick={() => {
+              navigate("/investor/video");
+            }}
+          >
+            Meetings
+          </button>
+          <button
+            className="logout-nav-button"
+            onClick={() => {
+              logout();
+            }}
+          >
+            Logout
+          </button>
         </div>
       </div>
       <div className="flex center padding-20">
@@ -82,14 +126,33 @@ function SingleBuisness() {
                   setPopup(false);
                 }}
               />
-              <input type="date" className="popup-date" onChange={(e)=>{setDate(e.target.value)}}/>
-              <input type="time" className="popup-time" onChange={(e)=>{setTime(e.target.value)}}/>
-              <input type="text" placeholder="meeting link" className="popup-link" onChange={(e)=>{setLink(e.target.value)}}/>
+              <input
+                type="date"
+                className="popup-date"
+                onChange={(e) => {
+                  setDate(e.target.value);
+                }}
+              />
+              <input
+                type="time"
+                className="popup-time"
+                onChange={(e) => {
+                  setTime(e.target.value);
+                }}
+              />
+              <input
+                type="text"
+                placeholder="meeting link"
+                className="popup-link"
+                onChange={(e) => {
+                  setLink(e.target.value);
+                }}
+              />
               <div className="flex around">
                 <button
                   className="popup-book-button"
                   onClick={() => {
-                    setPopup(false);
+                    bookMeeting()
                   }}
                 >
                   Book
@@ -112,7 +175,7 @@ function SingleBuisness() {
                 onClick={() => navigate("/investor")}
               />
             </div>
-            <h4>Owned by:{ownerFirst+" "+ownerLast}</h4>
+            <h4>Owned by:{ownerFirst + " " + ownerLast}</h4>
             <h4>{business.location}</h4>
             <h4>{business.industry}</h4>
             <h4>Valuation : {business.valuation}$</h4>
@@ -120,45 +183,58 @@ function SingleBuisness() {
             <h4>Stake offered : {business.stake_offered}% of the company</h4>
             <p>{business.description}</p>
             <div className="rating-container flex column gap-20">
-            <h4>Add Rating</h4>
-            <div className="flex gap-10 ">
-              <Rating
-                value={rating}
-                onChange={(event, newRating) => {
-                  setRating(newRating);
-                }}
-              />
-            </div>
-            
-            <h4>Add Review</h4>
-            <div className="flex gap-20">
-              <input
-                type="text"
-                className="review-input padding-10"
-                onChange={(event) => {
-                  setReview(event.target.value);
-                }}
-              ></input>
-              <button className="review-button">Send</button>
-            </div>
-            <div className="flex center gap-20">
-              <button
-                className="single-business-button"
-                onClick={() => {
-                  setPopup(true);
-                }}
-              >
-                Book a meeting
-              </button>
-              <button className="single-business-button" onClick={() => {}}>
-                Favorite
-              </button>
-            </div>
+              <h4>Add Rating</h4>
+              <div className="flex gap-10 ">
+                <Rating
+                  value={rating}
+                  onChange={(event, newRating) => {
+                    setRating(newRating);
+                  }}
+                />
+              </div>
+
+              <h4>Add Review</h4>
+              <div className="flex gap-20">
+                <input
+                  type="text"
+                  className="review-input padding-10"
+                  onChange={(event) => {
+                    setReview(event.target.value);
+                  }}
+                ></input>
+                <button className="review-button">Send</button>
+              </div>
+              <div className="flex center gap-20">
+                <button
+                  className="single-business-button"
+                  onClick={() => {
+                    setPopup(true);
+                  }}
+                >
+                  Book a meeting
+                </button>
+                <button className="single-business-button" onClick={() => {}}>
+                  Favorite
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <Footer />
+      {error && (
+        <div className="error-message flex center column gap-20">
+          {error}
+          <button
+            className="error-messge-button"
+            onClick={() => {
+              setError(null);
+            }}
+          >
+            Close
+          </button>
+        </div>
+      )}
     </div>
   );
 }
