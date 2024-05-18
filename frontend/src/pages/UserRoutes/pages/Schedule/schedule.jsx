@@ -105,6 +105,7 @@ function Schedule() {
         </div>
       </div>
       <div className="schedule-container padding-10 ">
+        <h1>Schedule</h1>
         <table>
           <thead>
             <tr>

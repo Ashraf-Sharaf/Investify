@@ -84,7 +84,9 @@ function Reviews() {
           </div>
           <div
             className="flex gap-10 user-sidebar-navigation align"
-            onClick={() => {}}
+            onClick={() => {
+                navigate("/user/schedule");
+              }}
           >
             <EventAvailableIcon />
             <h3>Schedule</h3>
@@ -110,6 +112,7 @@ function Reviews() {
         </div>
       </div>
       <div className="schedule-container padding-10 ">
+        <h1>Reviews</h1>
         <table>
           <thead>
             <tr>
