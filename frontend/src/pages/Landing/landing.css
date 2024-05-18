@@ -63,7 +63,7 @@
   padding: 20px;
   width: 250px;
   height: 250px;
-  background-color: #f0f0f0;
+  background-color: #F1F2F3;
   border-radius: 30px;
 
 }
@@ -115,10 +115,8 @@
 .service-card {
   height: 300px;
   width: 250px;
-  background-color: #f0f0f0;
+  background-color: #F1F2F3;
   border-radius: 30px;
-  border-right: 4px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 4px solid rgba(0, 0, 0, 0.1);
 }
 .service-card-img {
   width: 100%;
