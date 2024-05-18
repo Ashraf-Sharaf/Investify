@@ -2,7 +2,8 @@
   position: relative;
   height: 600px;
   width: 70%;
-  border-radius: 30px;background-color: #f0f0f0;
+  border-radius: 30px;
+  background-color: #f0f0f0;
 }
 .single-business-img {
   height: 200px;
@@ -41,68 +42,69 @@
 }
 .single-business-button:hover {
   background-color: white;
-  color:#084f09;
+  color: #084f09;
   border: 1px solid #084f09;
 }
-.book-meeting-popup{ 
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
+.book-meeting-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: grey;
-  border:1px solid black;
+  border: 1px solid black;
   border-radius: 20px;
   height: 250px;
   width: 300px;
   z-index: 1;
 }
-.popup-date,.popup-time{
+.popup-date,
+.popup-time {
   height: 40px;
   background-color: #084f09;
   border-radius: 10px;
   color: white;
   padding: 10px;
 }
-.popup-date::-webkit-calendar-picker-indicator,.popup-time::-webkit-calendar-picker-indicator{
+.popup-date::-webkit-calendar-picker-indicator,
+.popup-time::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
-.popup-close{
+.popup-close {
   margin-left: auto;
-  cursor:pointer;
+  cursor: pointer;
 }
-.popup-book-button{
+.popup-book-button {
   height: 30px;
   width: 70px;
   background-color: #084f09;
   color: white;
   border-radius: 70px;
   cursor: pointer;
-  
 }
-.close-icon{
+.close-icon {
   cursor: pointer;
 }
-.rating-container{  
+.rating-container {
   width: 100%;
   position: absolute;
   bottom: 0;
   right: 0;
   margin-bottom: 10px;
 }
-.popup-link{
+.popup-link {
   height: 40px;
   background-color: #084f09;
   border-radius: 10px;
-  padding:10px;
+  padding: 10px;
   color: white;
 }
-.meeting-button{
+.meeting-button {
   height: 50px;
   width: 100px;
   font-size: larger;
   font-weight: bold;
   border-radius: 10px;
-  background-color:#084f09;
+  background-color: #084f09;
   color: white;
   cursor: pointer;
 }
