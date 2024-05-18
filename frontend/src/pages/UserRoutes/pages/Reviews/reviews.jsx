@@ -14,6 +14,35 @@ function Reviews() {
 
     const navigate = useNavigate();
 
+    const [reviews, setReviews] = useState([]);
+    const [investors, setInvestors] = useState([]);
+
+    const [error, setError] = useState(null);
+
+    const getReviews = async () => {
+        try {
+          const response = await axios.get(
+            "http://127.0.0.1:8000/api/get_reviews",
+            {
+              headers: {
+                Authorization: "Bearer " + window.localStorage.getItem("token"),
+              },
+            }
+          );
+          if (response.status === 200) {
+            setReviews(response.data.reviews);
+            setInvestors(response.data.investor);
+            console.log(response.data)
+          }
+        } catch (error) {
+          setError("Error loading data");
+        }
+      };
+    
+      useEffect(() => {
+        getReviews();
+      }, []);
+  
     const logout = () => {
         window.localStorage.setItem("token", null);
         navigate("/");
@@ -79,6 +108,32 @@ function Reviews() {
             }}
           />
         </div>
+      </div>
+      <div className="schedule-container padding-10 ">
+        <table>
+          <thead>
+            <tr>
+              <th>Investor Name</th>
+              <th>Rating</th>
+              <th>Review</th>
+            
+            </tr>
+          </thead>
+          <tbody>
+            {reviews.map((review, index) => (
+              <tr key={index}>
+                {investors.map((investor, index) => (
+                  <td>
+                    {investor.first_name + " " + investor.last_name}
+                  </td>
+                ))}
+                <td>{review.rating}</td>
+                <td>{review.description}</td>
+             
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
