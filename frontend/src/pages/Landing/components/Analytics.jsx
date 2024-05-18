@@ -1,7 +1,7 @@
 function Analytics() {
   return (
-    <div className="analytics-section flex column around center">
-      <div className="analytics-cards flex between center">
+    <div className="analytics-section flex column  center">
+      <div className="analytics-cards flex around center">
         <div className="analytics-card flex center column around">
           <h1>70+</h1>
           <p>Startups</p>
@@ -12,7 +12,7 @@ function Analytics() {
         </div>
         <div className="analytics-card flex center column around">
           <h1>25+</h1>
-          <p>Startups funded</p>
+          <p>Investments</p>
         </div>
       </div>
     </div>
