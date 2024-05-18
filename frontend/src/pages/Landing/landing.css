@@ -80,7 +80,7 @@
   gap:60px;
 }
 .story-section h1 {
-  font-size: 50px;
+  font-size: 80px;
 }
 .story-cards {
   background-image: linear-gradient(to right,#84B17F,#384B36);
@@ -93,11 +93,11 @@
 }
 .story-card {
   height: 100%;
-  gap: 50px;
+  text-align: center;
 }
 
 .story-slider {
-  width: 700px;
+  width: 1000px;
   padding: 20px;
 }
 /* service-section  */
