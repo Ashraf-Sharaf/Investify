@@ -114,7 +114,7 @@ function ChatBot(){
         </div>
         <div
           className="flex gap-10 user-sidebar-navigation align"
-          onClick={() => {}}
+          onClick={() => {navigate('/user/reviews')}}
         >
           <ReviewsIcon />
           <h3>Reviews</h3>
