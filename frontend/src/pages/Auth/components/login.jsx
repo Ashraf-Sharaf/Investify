@@ -38,8 +38,8 @@ function Login({ onToggle }) {
         <div className="flex column center auth-section">
           <div className="flex column between center  auth-form">
             <h1>Login</h1>
-            <div className="flex center gap-20 column full-w">
-            <input
+            <div className="flex center  column full-w auth-form-inputs">
+           <div className="flex full-w column center gap-10"><input
               className="auth-inputs"
               placeholder="E-mail"
               onChange={(e) => {
@@ -54,7 +54,8 @@ function Login({ onToggle }) {
                 setPassword(e.target.value);
               }}
             ></input>
-            </div>
+           </div>
+           <div>
             <button
               className="auth-button"
               onClick={() => {
@@ -63,12 +64,15 @@ function Login({ onToggle }) {
             >
               Login
             </button>
+            </div>
+             </div>
           </div>
         </div>
         <div className="flex column center login greeting-section">
-          <div className="flex center column greeting between">
+          <div className="flex center column greeting around">
             <h1>Welcome Back</h1>
             <p>Log in with your personal details to use all of site featuers</p>
+            <img src="/images/login-img.png" className="login-img"></img>
             <button className="auth-button" onClick={() => onToggle()}>
               Sign Up
             </button>
