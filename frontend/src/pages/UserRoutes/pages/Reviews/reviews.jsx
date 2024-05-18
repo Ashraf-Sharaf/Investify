@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 function Reviews() {
 
     const navigate = useNavigate();
-    
+
     const logout = () => {
         window.localStorage.setItem("token", null);
         navigate("/");
@@ -36,7 +36,7 @@ function Reviews() {
             <h3>Home</h3>
           </div>
           <div
-            className="flex gap-10 user-sidebar-navigation align"
+            className="flex gap-10 user-sidebar-navigation align page-shown"
             onClick={() => {
               navigate("/user/reviews");
             }}
@@ -54,7 +54,7 @@ function Reviews() {
             <h3>AI</h3>
           </div>
           <div
-            className="flex gap-10 user-sidebar-navigation align page-shown"
+            className="flex gap-10 user-sidebar-navigation align"
             onClick={() => {}}
           >
             <EventAvailableIcon />
