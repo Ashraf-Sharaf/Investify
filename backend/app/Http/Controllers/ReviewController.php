@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Business;
+use App\Models\User;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,11 +54,15 @@ class ReviewController extends Controller
         }
 
         $reviews = Review::where('business_id', $businessID)->get();
+        $investorID = Review::where('business_id', $businessID)->pluck('investor_id');
+        $investor= User::whereIn('id', $investorID)->get();
+
 
         return response()->json([
             'status' => 200,
             'message' => 'Reviews Retrieved successfully',
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'investor'=>$investor
         ]);
     }
 }
