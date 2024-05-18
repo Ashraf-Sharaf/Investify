@@ -17,12 +17,12 @@ function Stories() {
     slidesToScroll: 1,
   };
   return (
-    <div className="story-section flex column center around">
+    <div className="story-section flex column center ">
       <h1>Success Stories</h1>
       <Slider {...settings} className="story-slider flex center">
         {data.map((d) => (
           <div key={d.name} className="story-cards">
-            <div className="story-card flex center column gap-20">
+            <div className="story-card flex center column">
               <h2>{d.name}</h2>
               <p>{d.review}</p>
             </div>
