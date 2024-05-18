@@ -1,7 +1,7 @@
 import "../../sidebar.css";
 import "./schedule.css";
 import axios from "axios";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import ComputerIcon from "@mui/icons-material/Computer";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
