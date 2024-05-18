@@ -11,6 +11,14 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import { useState, useEffect } from "react";
 
 function Reviews() {
+
+    const navigate = useNavigate();
+    
+    const logout = () => {
+        window.localStorage.setItem("token", null);
+        navigate("/");
+      };
+
   return (
     <div className="flex">
       <div className="user-sidebar flex column padding-20 gap-20">
