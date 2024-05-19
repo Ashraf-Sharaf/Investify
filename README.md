@@ -48,7 +48,7 @@
 ### Mockups
 | Login screen  | Menu Screen | Order Screen |
 | ---| ---| ---|
-| ![Login](./readme/demo/Login-screen.png) | ![Entrepreneur-home](./readme/demo/entrepreneur-home-page.png) | ![fsdaf](investor-single-business-page) |
+| ![Login](./readme/demo/Login-screen.png) | ![Entrepreneur-home](./readme/demo/entrepreneur-home-page.png) | ![fsdaf](investor-single-business-page.png) |
 
 <br><br>
 
