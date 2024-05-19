@@ -42,7 +42,7 @@
 
 > We designed Investify using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
-- Project Figma design [figma](https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?type=design&node-id=257%3A79&mode=design&t=adzbABt5hbb91ucZ-1)
+- Project Figma design [figma](https://www.figma.com/design/xCdCTGsLS8Xi0SkYZSWOZI/Readme-Template-Assets?node-id=0-1&t=0S1yLdwPdz281ZP7-0)
 
 
 ### Mockups
