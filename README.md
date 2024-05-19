@@ -74,6 +74,11 @@
 | Review screen  | Schedule Screen | Chatbot Screen |
 | ![Landing](./readme/demo/review.png) | ![fsdaf](./readme/demo/schedule.png) | ![fsdaf](./readme/demo/AI.png) |
 
+### Investor Screens (Web)
+| Register screen  | Landing screen |  View Business screen |
+| ---| ---| ---|
+| ![Landing](./readme/demo/investor-complete.png) | ![fsdaf](./readme/demo/investor-home.png) | ![fsdaf](./readme/demo/investor/view-business.png) |
+
 <br><br>
 
 
