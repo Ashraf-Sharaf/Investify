@@ -77,7 +77,7 @@
 ### Investor Screens (Web)
 | Register screen  | Landing screen |  View Business screen |
 | ---| ---| ---|
-| ![Landing](./readme/demo/investor-complete.png) | ![fsdaf](./readme/demo/investor-home.png) | ![fsdaf](./readme/demo/investor/view-business.png) |
+| ![Landing](./readme/demo/investor-complete.png) | ![fsdaf](./readme/demo/investor-home.png) | ![fsdaf](./readme/demo/investor-view-business.png) |
 
 <br><br>
 
