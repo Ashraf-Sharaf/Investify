@@ -70,9 +70,9 @@
 ### Entreprneur Screens (Web)
 | Login screen  | Register screen |  Landing screen |
 | ---| ---| ---|
-| ![Landing](./readme/demo/login-screen.png) | ![fsdaf](./readme/demo/signup.png) | ![fsdaf](./readme/demo/entrepreneur-home-page.png) |
-| Home screen  | Menu Screen | Order Screen |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/demo/Login-screen.png) | ![fsdaf](./readme/demo/signup.png) | ![fsdaf](./readme/demo/entrepreneur-home-page.png) |
+| Review screen  | Schedule Screen | Chatbot Screen |
+| ![Landing](./readme/demo/review.png) | ![fsdaf](./readme/demo/schedule.png) | ![fsdaf](./readme/demo/AI.png) |
 
 <br><br>
 
