@@ -10,9 +10,19 @@
 > Investify aims to connect investors with entrepreneur ideas or startups by providing a user-friendly platform for users to connect and negotiate a deal.
 
 ### User Stories
-- As a entrepreneur, I want to find an investor, so I can work on my startup idea.
-- As a entrepreneur, I want to seek help, so I can upgrade my startup.
-- As a investor, I want to find potential startup ideas, so I can invest in it.
+### Investor
+- As an investor, I want to browse through a variety of investment opportunities across different industries, so i can choose the best business to invest in.
+- As an investor, I want to access AI, so i can make informed investment decisions and stay updated on market trends.
+- As an investor, I want to schedule and manage online meetings with entrepreneurs, so i can negotiate and discuss offers.
+
+### Entrepreneur
+- As an entrepreneur, I want to create a detailed profile for my business, including information about business and fundings needed, so i can find the best investment.
+- As an entrepreneur, I want to seek AI help, so I can elevate my startup.
+- As an entrepreneur, I want to receive feedback and guidance from experienced investors, so i can improve my pitch and increase my chances of securing fundings.
+
+### Admin
+- As an admin, I want to be able to invite investors using emails, so i can expand our network of investors.
+- As an admin, I want to see analytics, so i can have an overveiw on the website.
 
 <br><br>
 <!-- Tech stack -->
