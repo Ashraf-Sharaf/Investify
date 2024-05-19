@@ -48,7 +48,7 @@
 ### Mockups
 | Login screen  | Menu Screen | Order Screen |
 | ---| ---| ---|
-| ![Login](./readme/demo/Login-screen.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Login](./readme/demo/Login-screen.png) | ![Entrepreneur-home](./readme/demo/entrepreneur-home-page.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 
 <br><br>
 
