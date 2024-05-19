@@ -46,9 +46,9 @@
 
 
 ### Mockups
-| Login screen  | Menu Screen | Order Screen |
+| Login screen  | Entrepreneur Home Screen | Investor View Business Screen |
 | ---| ---| ---|
-| ![Login](./readme/demo/Login-screen.png) | ![Entrepreneur-home](./readme/demo/entrepreneur-home-page.png) | ![fsdaf](investor-single-business-page.png) |
+| ![Login](./readme/demo/Login-screen.png) | ![Entrepreneur-home](./readme/demo/entrepreneur-home-page.png) | ![fsdaf](./readme/demo/investor-single-business-page.png) |
 
 <br><br>
 
@@ -59,7 +59,7 @@
 
 - Insert ER Diagram here
 
-
+<img src="./readme/demo/ER-diagram.png"/>
 <br><br>
 
 
