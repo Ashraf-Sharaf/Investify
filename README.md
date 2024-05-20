@@ -120,22 +120,32 @@
 
 Make sure you have the following prerequisites installed on your system:
 1. Insatall [Composer](https://getcomposer.org/download/)
-2. Install [Node and NPM] (https://nodejs.org/en/download/package-manager)
+2. Install [Node-and-NPM](https://nodejs.org/en/download/package-manager)
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+Below are the steps to run Investify
 
-1. Get a free API Key at [example](https://example.com)
-2. Clone the repo
-   git clone [github]
-3. Install NPM packages
+1. Clone the repo
+      ```sh
+   git clone https://github.com/Ashraf-Sharaf/Investify.git
+   ```
+2. Navigate to frontend directory
    ```sh
+   cd frontend
+   ```
+3. Install npm packages
+      ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+4. Navigate to backend directory
+   ```sh
+   cd ..
+   cd backend
+   ```
+5. Install composer packages
+      ```sh
+   composer install
    ```
 
-Now, you should be able to run Investify locally and explore its features.
+Now, you should be able to run Investify locally.
