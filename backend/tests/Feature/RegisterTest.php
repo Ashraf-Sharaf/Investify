@@ -19,7 +19,7 @@ class RegisterTest extends TestCase
         $response = $this->post('/api/register',[
             'first_name'=>'ashraff',
             'last_name'=>'sharaff',
-            'email'=>'sharf@gmail.com',
+            'email'=>'shara@gmail.com',
             'password'=>$hashedPassword
         ]);
 
