@@ -87,7 +87,7 @@
 
 ###  Mastering AI Interaction: Unveiling the Power of Prompt Engineering:
 
-- This project uses AI integration by having a chatbot responding to questions related to investments
+- This project has a chatbot designed to deliver precise and pertinent responses on investments, utilizing the OpenAI GPT-3.5-turbo model. To achieve this, we guide the model to focus solely on investment-related inquiries.
 
 <br><br>
 
