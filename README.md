@@ -89,7 +89,7 @@
 
 - This project has a chatbot designed to deliver precise and pertinent responses on investments, utilizing the OpenAI GPT-3.5-turbo model. To achieve this, we guide the model to focus solely on investment-related inquiries.
 
-<img src="./readme/demo/prompt.png"/>
+<img src="./readme/demo/ER-diagram.png"/>
 <br><br>
 
 <!-- AWS Deployment -->
@@ -118,29 +118,24 @@
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Make sure you have the following prerequisites installed on your system:
+1. Insatall [Composer](https://getcomposer.org/download/)
+2. Install [Node and NPM] (https://nodejs.org/en/download/package-manager)
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Clone the repo"
-   git clone [github](https://github.com/Ashraf-Sharaf/Investify.git)
-2. Navigate to the frontend directory:
-   cd frontend
+1. Get a free API Key at [example](https://example.com)
+2. Clone the repo
+   git clone [github]
 3. Install NPM packages
+   ```sh
    npm install
-4. Navigate to the backend directory:
-   cd..
-5. Install Composer dependencies:
-   composer install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
 
-
-   
-
-
-Now, you should be able to run Investify locally.
+Now, you should be able to run Investify locally and explore its features.
