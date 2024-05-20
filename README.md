@@ -128,16 +128,19 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [example](https://example.com)
-2. Clone the repo
-   git clone [github]
+1. Clone the repo"
+   git clone [github](https://github.com/Ashraf-Sharaf/Investify.git)
+2. Navigate to the frontend directory:
+   cd frontend
 3. Install NPM packages
-   ```sh
    npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+4. Navigate to the backend directory:
+   cd..
+5. Install Composer dependencies:
+   composer install
 
-Now, you should be able to run Investify locally and explore its features.
+
+   
+
+
+Now, you should be able to run Investify locally.
