@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterTest extends TestCase
 {
@@ -12,12 +13,14 @@ class RegisterTest extends TestCase
      * A basic feature test example.
      */
     public function test_example(): void
-    {
+    {   
+        $password='12341234';
+        $hashedPassword=Hash::make($password);
         $response = $this->post('/api/register',[
             'first_name'=>'ashraff',
             'last_name'=>'sharaff',
-            'email'=>'sharaf@gmail.com',
-            'password'=>'12345678'
+            'email'=>'sharf@gmail.com',
+            'password'=>$hashedPassword
         ]);
 
         $response->assertStatus(200);
