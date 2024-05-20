@@ -106,9 +106,6 @@
 
 ###  Precision in Development: Harnessing the Power of Unit Testing:
 <img src="./readme/demo/tests.png"/>
-
-- 
-
 <br><br>
 
 
