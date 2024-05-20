@@ -89,7 +89,7 @@
 
 - This project has a chatbot designed to deliver precise and pertinent responses on investments, utilizing the OpenAI GPT-3.5-turbo model. To achieve this, we guide the model to focus solely on investment-related inquiries.
 
-<img src="./readme/demo/ER-diagram.png"/>
+<img src="./readme/demo/prompt.png"/>
 <br><br>
 
 <!-- AWS Deployment -->
