@@ -97,7 +97,8 @@
 
 ###  Efficient AI Deployment: Unleashing the Potential with AWS Integration:
 
-- 
+
+- My project's backend is hosted on AWS, leveraging its robust and scalable infrastructure to ensure high performance and reliability. This setup allows us to efficiently manage resources, handle large volumes of data, and provide a seamless experience for our users. 
 
 <br><br>
 
