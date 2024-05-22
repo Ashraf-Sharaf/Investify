@@ -72,20 +72,22 @@
 | ---| ---| 
 | ![Landing](./readme/demo/Login-screen.png) | ![fsdaf](./readme/demo/signup.png) | 
 
-| Review screen  | Landing screen | Chatbot screen |
-| ![Landing](./readme/demo/review.png) | ![fsdaf](./readme/demo/entrepreneur-home-page.png)| ![fsdaf](./readme/demo/AI.png) |
+| Review screen  | Landing screen |
+| ---| ---|  
+| ![Landing](./readme/demo/review.png) | ![fsdaf](./readme/demo/entrepreneur-home-page.png)| 
 
 | Schedule Screen | Chatbot Screen |
+| ---| ---| 
 | ![fsdaf](./readme/demo/schedule.png) | ![fsdaf](./readme/demo/AI.png) |
 
 ### Investor Screens (Web)
 | Register screen  | Landing screen |  
 | ---| ---|
-| ![Landing](./readme/demo/investor-complete.png) | ![fsdaf](./readme/demo/investor-home.png) |
+| ![Landing](./readme/demo/investor-complete.png) | ![fsdaf](./readme/demo/landing.png) |
 
-|  View Business screen |
-| ---| 
- | ![fsdaf](./readme/demo/investor-view-business.png) |
+| Home screen | View Business screen|
+| ---| ---|
+| ![fsdaf](./readme/demo/investor-home.png) |  ![fsdaf](./readme/demo/investor-view-business.png) |
 
 <br><br>
 
